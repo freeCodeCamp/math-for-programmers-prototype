@@ -1,0 +1,25 @@
+$dark-green: #006400;
+$orange: #FF9C2A;
+$red: #FF4025;
+$blue: #3949AB;
+$green: #007E00;
+$light-orange: #FFAD25;
+$light-red: #FF6D58;
+$light-blue: #2DB9FF;
+$purple: #BA68C8;
+$yellow: #FFEE18;
+$brown: #A4755F;
+$grey: #E0E0E0;
+$dark-grey: #939393;
+$black: #2A2A2A;
+$white: #FFFFFF;
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  // font-family: 'Ubuntu Mono', monospace;
+}

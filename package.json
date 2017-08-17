@@ -5,16 +5,32 @@
   "dependencies": {
     "codemirror": "^5.28.0",
     "mathjax": "^2.7.1",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.11",
     "redux": "^3.7.2"
   },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "eslint-plugin-prefer-object-spread": "^1.2.1"
+  },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"yarn run scss-watch\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "scss-watch": "cd src/ && scss --watch index.scss:index.css"
+  },
+  "author": "David Acosta",
+  "license": "BSD 3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juandaco/fcc-math-latex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juandaco/fcc-math-latex/issues"
+  },
+  "homepage": "."
 }

@@ -1,5 +1,6 @@
 {
-  "parserOption": {
+  "extends": "react-app",
+  "parserOptions": {
     "ecmaVersion": 6,
     "ecmaFeatures": {
       "jsx": true
