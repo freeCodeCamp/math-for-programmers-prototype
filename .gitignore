@@ -3,6 +3,9 @@
 # Configuration files
 .vscode
 
+# Sass cache
+/src/.sass-cache/
+
 # dependencies
 /node_modules
 

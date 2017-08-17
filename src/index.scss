@@ -21,5 +21,11 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Lato', sans-serif;
-  // font-family: 'Ubuntu Mono', monospace;
+}
+
+.CodeMirror {
+  width: 700px;
+  font-size: 1.1em;
+  border-radius: 5px;
+  font-family: 'Ubuntu Mono', monospace !important;
 }

@@ -5,4 +5,10 @@ body {
   justify-content: center;
   font-family: 'Lato', sans-serif; }
 
+.CodeMirror {
+  width: 700px;
+  font-size: 1.1em;
+  border-radius: 5px;
+  font-family: 'Ubuntu Mono', monospace !important; }
+
 /*# sourceMappingURL=index.css.map */
