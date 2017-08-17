@@ -5,7 +5,14 @@ body {
   justify-content: center;
   font-family: 'Lato', sans-serif; }
 
+.App {
+  width: 100%;
+  text-align: center; }
+  .App h1 {
+    margin-bottom: 30px; }
+
 .CodeMirror {
+  text-align: left;
   width: 700px;
   font-size: 1.1em;
   border-radius: 5px;

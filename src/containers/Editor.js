@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateCode } from '../actions';
@@ -9,12 +9,19 @@ import 'codemirror/mode/stex/stex';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/monokai.css';
 
-class Editor extends Component {
-  render() {
-    const { code, updateCode } = this.props;
+const tabToSpaces = cm => {
+  const spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+  cm.replaceSelection(spaces);
+};
+
+const Editor = ({ code, updateCode}) => {
     const options = {
       lineNumbers: true,
+      extraKeys: {
+        Tab: tabToSpaces
+      },
       mode: 'stex',
+      tabSize: 2,
       theme: 'monokai'
     };
 
@@ -26,8 +33,7 @@ class Editor extends Component {
         value={code}
       />
     );
-  }
-}
+};
 
 Editor.propTypes = {
   code: PropTypes.string.isRequired,
