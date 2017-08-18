@@ -17,6 +17,10 @@ Preview.propTypes = {
   code: PropTypes.string.isRequired
 };
 
+Preview.defaultProps = {
+  name: ''
+};
+
 const mapStateToProps = state => ({
   code: state.code
 });
