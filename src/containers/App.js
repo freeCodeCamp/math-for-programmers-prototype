@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <h1>Math LaTeX</h1>
+        <h1>Math LaTeX Challenges</h1>
         <Editor />
         <Preview />
       </div>
