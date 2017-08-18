@@ -6,19 +6,19 @@ import * as MathJax from 'react-mathjax-updated';
 const Preview = ({ code }) => {
   const mathDelimStart = /(\\\[|\\\(|\$\$)/g;
   const mathDelimEnd = /(\\\]|\\\)|\$\$)/g;
-  return (<MathJax.Context>
-    <MathJax.Node>
-      {code.replace(mathDelimStart, '').replace(mathDelimEnd, '')}
-    </MathJax.Node>
-  </MathJax.Context>);
+  return (
+    <MathJax.Context>
+      <MathJax.Node>
+        {code
+          ? code.replace(mathDelimStart, '').replace(mathDelimEnd, '')
+          : null}
+      </MathJax.Node>
+    </MathJax.Context>
+  );
 };
 
 Preview.propTypes = {
   code: PropTypes.string.isRequired
-};
-
-Preview.defaultProps = {
-  name: ''
 };
 
 const mapStateToProps = state => ({
