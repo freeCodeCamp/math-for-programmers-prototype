@@ -1,21 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as MathJax from 'react-mathjax-updated';
 
-class Preview extends Component {
-  shouldComponentUpdate() {
-    return true;
-  }
-
-  render() {
-    return (<MathJax.Context>
-      <MathJax.Node>
-        {this.props.code}
-      </MathJax.Node>
-    </MathJax.Context>);
-  }
-}
+const Preview = ({ code }) =>
+  (<MathJax.Context>
+    <MathJax.Node>
+      {this.props.code}
+    </MathJax.Node>
+  </MathJax.Context>);
 
 Preview.propTypes = {
   code: PropTypes.string.isRequired
