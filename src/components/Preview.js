@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import * as MathJax from 'react-mathjax-updated';
 
 const Preview = ({ code }) => {
-  const mathDelimStart = /(\\\[|\\\(|\$\$)/g;
-  const mathDelimEnd = /(\\\]|\\\)|\$\$)/g;
+  const mathDelimStart = /(\\\[|\\\(|\$\$?)/g;
+  const mathDelimEnd = /(\\\]|\\\)|\$\$?)/g;
   return (
     <MathJax.Context>
       <MathJax.Node>
