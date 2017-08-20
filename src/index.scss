@@ -1,45 +1,115 @@
 $dark-green: #006400;
-$orange: #FF9C2A;
-$red: #FF4025;
-$blue: #3949AB;
-$green: #007E00;
-$light-orange: #FFAD25;
-$light-red: #FF6D58;
-$light-blue: #2DB9FF;
-$purple: #BA68C8;
-$yellow: #FFEE18;
-$brown: #A4755F;
-$grey: #E0E0E0;
+$orange: #ff9c2a;
+$red: #ff4025;
+$blue: #3949ab;
+$green: #007e00;
+$light-orange: #ffad25;
+$light-red: #ff6d58;
+$light-blue: #2db9ff;
+$purple: #ba68c8;
+$yellow: #ffee18;
+$brown: #a4755f;
+$grey: #e0e0e0;
 $dark-grey: #939393;
-$black: #2A2A2A;
-$white: #FFFFFF;
-
+$black: #2a2a2a;
+$white: #fff;
 body {
+  font-family: 'Lato', sans-serif;
+
   display: flex;
   flex-direction: column;
 
   align-items: center;
   justify-content: center;
-  font-family: 'Lato', sans-serif;
 }
 
 .App {
   width: 100%;
+
   text-align: center;
   h1 {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+
+  width: 900px;
+
+  justify-content: space-between;
+}
+
+.ChallengeInfo {
+  width: 350px;
+
+  text-align: left;
+  p {
+    line-height: 1.4;
+  }
+  h3 {
+    font-size: 1.3em;
+
+    text-align: center;
+  }
+  code {
+    font-family: 'Ubuntu Mono', monospace;
+
+    padding: 1px 5px;
+
+    color: #c7254e;
+    border-radius: 4px;
+    background-color: #f9f2f4;
+  }
+  blockquote {
+    font-size: 90%;
+
+    overflow: auto;
+
+    width: 90%;
+    margin: 0;
+    padding: 5px 10px;
+
+    white-space: pre;
+
+    color: #c7254e;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fffbe5;
   }
 }
 
 .CodeMirror {
-  text-align: left;
-  width: 700px;
-  font-size: 1.1em;
-  border-radius: 5px;
   font-family: 'Ubuntu Mono', monospace !important;
+  font-size: 1.1em;
+
+  width: 500px;
+  height: 170px !important;
+  margin-top: 30px;
   margin-bottom: 50px;
+
+  text-align: left;
+
+  border-radius: 5px;
+}
+
+.Preview {
+  display: flex;
+  flex-direction: column;
+
+  width: 500px;
+
+  align-items: left;
+  justify-content: left;
+  h3 {
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
 }
 
 .MJXc-display {
-  font-size: 1.5em !important;
+  font-size: 1.2em !important;
+
+  margin-left: 40px !important;
 }

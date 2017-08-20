@@ -7,13 +7,16 @@ const Preview = ({ code }) => {
   const mathDelimStart = /(\\\[|\\\(|\$\$?)/g;
   const mathDelimEnd = /(\\\]|\\\)|\$\$?)/g;
   return (
-    <MathJax.Context>
-      <MathJax.Node>
-        {code
-          ? code.replace(mathDelimStart, '').replace(mathDelimEnd, '')
-          : null}
-      </MathJax.Node>
-    </MathJax.Context>
+    <div className='Preview'>
+      <h3>Preview:</h3>
+      <MathJax.Context>
+        <MathJax.Node>
+          {code
+            ? code.replace(mathDelimStart, '').replace(mathDelimEnd, '')
+            : null}
+        </MathJax.Node>
+      </MathJax.Context>
+    </div>
   );
 };
 
