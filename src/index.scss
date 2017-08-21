@@ -73,6 +73,9 @@ blockquote {
   width: 350px;
 
   text-align: left;
+  a:link, a:visited {
+    color: $light-blue;
+  }
   p {
     line-height: 1.4;
   }

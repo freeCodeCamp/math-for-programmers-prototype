@@ -39,6 +39,8 @@ blockquote {
 .ChallengeInfo {
   width: 350px;
   text-align: left; }
+  .ChallengeInfo a:link, .ChallengeInfo a:visited {
+    color: #2db9ff; }
   .ChallengeInfo p {
     line-height: 1.4; }
   .ChallengeInfo h3 {

@@ -7,6 +7,14 @@ const initState = {
   data
 };
 
+initState.challenge.tests = initState.challenge.tests.map(
+  x =>
+    (x = {
+      test: x,
+      status: 'init'
+    })
+);
+
 const reducer = (state = initState, action) => {
   switch (action.type) {
     case UPDATE_CODE:
