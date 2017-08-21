@@ -55,12 +55,18 @@ class Editor extends Component {
     cm.replaceSelection(spaces);
   }
 
+  shortcuts(cm) {
+    // Setup Run Tests
+  }
+
   render() {
     const { code } = this.props;
     const options = {
       lineNumbers: true,
       extraKeys: {
-        Tab: this.tabToSpaces
+        Tab: this.tabToSpaces,
+        'Ctrl-Enter': this.shortcuts,
+        'Cmd-Enter': this.shortcuts
       },
       mode: 'stex',
       tabSize: 2,

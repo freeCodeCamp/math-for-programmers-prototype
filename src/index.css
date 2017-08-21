@@ -5,6 +5,25 @@ body {
   align-items: center;
   justify-content: center; }
 
+code {
+  font-family: 'Ubuntu Mono', monospace;
+  padding: 1px 5px;
+  color: #c7254e;
+  border-radius: 4px;
+  background-color: #f9f2f4; }
+
+blockquote {
+  font-size: 90%;
+  overflow: auto;
+  width: 90%;
+  margin: 0;
+  padding: 5px 10px;
+  white-space: pre;
+  color: #c7254e;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fffbe5; }
+
 .App {
   width: 100%;
   text-align: center; }
@@ -25,23 +44,6 @@ body {
   .ChallengeInfo h3 {
     font-size: 1.3em;
     text-align: center; }
-  .ChallengeInfo code {
-    font-family: 'Ubuntu Mono', monospace;
-    padding: 1px 5px;
-    color: #c7254e;
-    border-radius: 4px;
-    background-color: #f9f2f4; }
-  .ChallengeInfo blockquote {
-    font-size: 90%;
-    overflow: auto;
-    width: 90%;
-    margin: 0;
-    padding: 5px 10px;
-    white-space: pre;
-    color: #c7254e;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fffbe5; }
 
 .CodeMirror {
   font-family: 'Ubuntu Mono', monospace !important;
@@ -57,6 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 500px;
+  min-height: 170px;
   align-items: left;
   justify-content: left; }
   .Preview h3 {
@@ -66,5 +69,16 @@ body {
 .MJXc-display {
   font-size: 1.2em !important;
   margin-left: 40px !important; }
+
+.Tests {
+  text-align: left; }
+  .Tests .test {
+    padding: 7px 6px; }
+    .Tests .test i {
+      display: inline;
+      margin-right: 10px;
+      font-size: 1.4em; }
+    .Tests .test p {
+      display: inline; }
 
 /*# sourceMappingURL=index.css.map */

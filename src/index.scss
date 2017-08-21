@@ -13,6 +13,7 @@ $grey: #e0e0e0;
 $dark-grey: #939393;
 $black: #2a2a2a;
 $white: #fff;
+
 body {
   font-family: 'Lato', sans-serif;
 
@@ -21,6 +22,33 @@ body {
 
   align-items: center;
   justify-content: center;
+}
+
+code {
+  font-family: 'Ubuntu Mono', monospace;
+
+  padding: 1px 5px;
+
+  color: #c7254e;
+  border-radius: 4px;
+  background-color: #f9f2f4;
+}
+
+blockquote {
+  font-size: 90%;
+
+  overflow: auto;
+
+  width: 90%;
+  margin: 0;
+  padding: 5px 10px;
+
+  white-space: pre;
+
+  color: #c7254e;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fffbe5;
 }
 
 .App {
@@ -53,31 +81,6 @@ body {
 
     text-align: center;
   }
-  code {
-    font-family: 'Ubuntu Mono', monospace;
-
-    padding: 1px 5px;
-
-    color: #c7254e;
-    border-radius: 4px;
-    background-color: #f9f2f4;
-  }
-  blockquote {
-    font-size: 90%;
-
-    overflow: auto;
-
-    width: 90%;
-    margin: 0;
-    padding: 5px 10px;
-
-    white-space: pre;
-
-    color: #c7254e;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fffbe5;
-  }
 }
 
 .CodeMirror {
@@ -99,6 +102,7 @@ body {
   flex-direction: column;
 
   width: 500px;
+  min-height: 170px;
 
   align-items: left;
   justify-content: left;
@@ -112,4 +116,20 @@ body {
   font-size: 1.2em !important;
 
   margin-left: 40px !important;
+}
+
+.Tests {
+  text-align: left;
+
+  .test {
+    padding: 7px 6px;
+    i {
+      display: inline;
+      margin-right: 10px;
+      font-size: 1.4em;
+    }
+    p {
+      display: inline;
+    }
+  }
 }

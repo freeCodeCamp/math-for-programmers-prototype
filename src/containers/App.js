@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Editor from './Editor';
 import Preview from '../components/Preview';
 import ChallengeInfo from '../components/ChallengeInfo';
+import Tests from '../components/Tests';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <div className='content-right'>
             <Editor />
             <Preview />
+            <Tests />
           </div>
         </div>
       </div>
