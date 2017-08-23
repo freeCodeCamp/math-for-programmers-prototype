@@ -1,19 +1,19 @@
-import { UPDATE_CODE } from '../actions';
+import { UPDATE_CODE, RUN_TESTS, SET_CHALLENGE } from '../actions';
 import data from '../data.json';
+
+// Add status to each test
+data.challenges.forEach(c => {
+  c.tests = c.tests.map(t => ({
+    test: t,
+    status: 'init'
+  }));
+});
 
 const initState = {
   code: '\\[ f(n) = n^5 + 4n^2 + 2 |_{n=17} \\]',
-  challenge: data.challenges[0],
-  data
+  challenges: data.challenges,
+  activeChallenge: 0
 };
-
-initState.challenge.tests = initState.challenge.tests.map(
-  x =>
-    (x = {
-      test: x,
-      status: 'init'
-    })
-);
 
 const reducer = (state = initState, action) => {
   switch (action.type) {
@@ -21,6 +21,14 @@ const reducer = (state = initState, action) => {
       return {
         ...state,
         code: action.code
+      };
+    case RUN_TESTS:
+      console.log('Running Tests');
+      return state;
+    case SET_CHALLENGE:
+      return {
+        ...state,
+        activeChallenge: Number.parseInt(action.index, 10)
       };
     default:
       return state;

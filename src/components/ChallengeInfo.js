@@ -23,8 +23,8 @@ ChallengeInfo.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  title: state.challenge.title,
-  description: state.challenge.description
+  title: state.challenges[state.activeChallenge].title,
+  description: state.challenges[state.activeChallenge].description
 });
 
 export default connect(mapStateToProps)(ChallengeInfo);

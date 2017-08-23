@@ -64,17 +64,28 @@ blockquote {
   display: flex;
   flex-direction: row;
 
-  width: 900px;
+  width: 950px;
 
   justify-content: space-between;
 }
 
 .ChallengeInfo {
-  width: 350px;
+  // font-size: 1.1em;
+  width: 400px;
+  margin-top: 60px;
 
   text-align: left;
-  a:link, a:visited {
-    color: $light-blue;
+  a:link,
+  a:visited {
+    font-weight: bold;
+
+    color: #31708f;
+  }
+  a::after {
+    font-family: FontAwesome;
+    font-size: 0.7em;
+
+    content: ' \f08e';
   }
   p {
     line-height: 1.4;
@@ -86,6 +97,57 @@ blockquote {
   }
 }
 
+.ChallengeControl {
+  display: flex;
+
+  width: 84%;
+  margin-top: 30px;
+
+  flex-wrap: wrap;
+
+  select {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+
+    color: $dark-green;
+    border-color: $dark-green;
+    outline: none;
+  }
+
+  button:nth-child(3),
+  button:nth-child(4) {
+    width: 49%;
+  }
+  button:nth-child(5),
+  button:nth-child(2) {
+    flex-basis: 100%;
+  }
+  button {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+
+    margin: 2px 0.5%;
+    padding: 6px 12px;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    color: $dark-green;
+    border: 1px solid $black;
+    border-radius: 6px;
+    outline: none;
+    background: $white;
+  }
+  button:hover {
+    color: $white;
+    background-color: $dark-green;
+  }
+}
+
 .CodeMirror {
   font-family: 'Ubuntu Mono', monospace !important;
   font-size: 1.1em;
@@ -93,7 +155,7 @@ blockquote {
   width: 500px;
   height: 170px !important;
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 
   text-align: left;
 
@@ -122,14 +184,18 @@ blockquote {
 }
 
 .Tests {
+  width: 450px;
+
   text-align: left;
 
   .test {
     padding: 7px 6px;
     i {
-      display: inline;
-      margin-right: 10px;
       font-size: 1.4em;
+
+      display: inline;
+
+      margin-right: 10px;
     }
     p {
       display: inline;

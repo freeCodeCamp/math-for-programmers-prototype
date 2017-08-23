@@ -33,19 +33,62 @@ blockquote {
 .content {
   display: flex;
   flex-direction: row;
-  width: 900px;
+  width: 950px;
   justify-content: space-between; }
 
 .ChallengeInfo {
-  width: 350px;
+  width: 400px;
+  margin-top: 60px;
   text-align: left; }
-  .ChallengeInfo a:link, .ChallengeInfo a:visited {
-    color: #2db9ff; }
+  .ChallengeInfo a:link,
+  .ChallengeInfo a:visited {
+    font-weight: bold;
+    color: #31708f; }
+  .ChallengeInfo a::after {
+    font-family: FontAwesome;
+    font-size: 0.7em;
+    content: ' \f08e'; }
   .ChallengeInfo p {
     line-height: 1.4; }
   .ChallengeInfo h3 {
     font-size: 1.3em;
     text-align: center; }
+
+.ChallengeControl {
+  display: flex;
+  width: 84%;
+  margin-top: 30px;
+  flex-wrap: wrap; }
+  .ChallengeControl select {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+    color: #006400;
+    border-color: #006400;
+    outline: none; }
+  .ChallengeControl button:nth-child(3),
+  .ChallengeControl button:nth-child(4) {
+    width: 49%; }
+  .ChallengeControl button:nth-child(5),
+  .ChallengeControl button:nth-child(2) {
+    flex-basis: 100%; }
+  .ChallengeControl button {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    margin: 2px 0.5%;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    color: #006400;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    outline: none;
+    background: #fff; }
+  .ChallengeControl button:hover {
+    color: #fff;
+    background-color: #006400; }
 
 .CodeMirror {
   font-family: 'Ubuntu Mono', monospace !important;
@@ -53,7 +96,7 @@ blockquote {
   width: 500px;
   height: 170px !important;
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   text-align: left;
   border-radius: 5px; }
 
@@ -73,13 +116,14 @@ blockquote {
   margin-left: 40px !important; }
 
 .Tests {
+  width: 450px;
   text-align: left; }
   .Tests .test {
     padding: 7px 6px; }
     .Tests .test i {
+      font-size: 1.4em;
       display: inline;
-      margin-right: 10px;
-      font-size: 1.4em; }
+      margin-right: 10px; }
     .Tests .test p {
       display: inline; }
 

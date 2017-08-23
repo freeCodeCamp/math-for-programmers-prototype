@@ -53,8 +53,10 @@ Tests.propTypes = {
   tests: PropTypes.array
 };
 
-const mapStateToProps = state => ({
-  tests: state.challenge.tests
-});
+const mapStateToProps = state => {
+  return {
+    tests: state.challenges[state.activeChallenge].tests
+  };
+};
 
 export default connect(mapStateToProps)(Tests);
