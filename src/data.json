@@ -5,58 +5,28 @@
   "helpRoom": "HelpJavaScript",
   "challenges": [
     {
-      "id": "aff0395860f5d3034dc0bfc9",
-      "title": "Validate US Telephone Numbers",
+      "id": "",
+      "title": "Write your first Fraction",
       "description": [
-        "Return <code>true</code> if the passed string looks like a valid US phone number.",
-        "The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):",
-        "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
-        "For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return <code>true</code> if the string is a valid US phone number; otherwise return <code>false</code>.",
-        "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "To write your first vertical fraction using LaTeX, you'll need to add <code>\\frac{1}{2}</code>, where 1 and 2 can be any valid expression.",
+        "Notice that if you don't add the specified syntax (for example <code>3/4</code>), the fraction will be rendered horizontally.",
+        "If you did it correctly the "
       ],
       "challengeSeed": [
-        "function telephoneCheck(str) {",
-        "  // Good luck!",
-        "  return true;",
-        "}",
-        "",
-        "telephoneCheck(\"555-555-5555\");"
+        "% Write your LaTeX expression inside the delimiters",
+        "\\[  \\]",
+        ""
       ],
       "solutions": [
-        "var re = /^([+]?1[\\s]?)?((?:[(](?:[2-9]1[02-9]|[2-9][02-8][0-9])[)][\\s]?)|(?:(?:[2-9]1[02-9]|[2-9][02-8][0-9])[\\s.-]?)){1}([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2}[\\s.-]?){1}([0-9]{4}){1}$/;\n\nfunction telephoneCheck(str) {\n  return re.test(str);\n}\n\ntelephoneCheck(\"555-555-5555\");"
+        "\\[ \\frac{1}{2} \\]"
       ],
       "tests": [
-        "assert(typeof telephoneCheck(\"555-555-5555\") === \"boolean\", 'message: <code>telephoneCheck(\"555-555-5555\")</code> should return a boolean.');",
-        "assert(telephoneCheck(\"1 555-555-5555\") === true, 'message: <code>telephoneCheck(\"1 555-555-5555\")</code> should return true.');",
-        "assert(telephoneCheck(\"1 (555) 555-5555\") === true, 'message: <code>telephoneCheck(\"1 (555) 555-5555\")</code> should return true.');",
-        "assert(telephoneCheck(\"5555555555\") === true, 'message: <code>telephoneCheck(\"5555555555\")</code> should return true.');",
-        "assert(telephoneCheck(\"555-555-5555\") === true, 'message: <code>telephoneCheck(\"555-555-5555\")</code> should return true.');",
-        "assert(telephoneCheck(\"(555)555-5555\") === true, 'message: <code>telephoneCheck(\"(555)555-5555\")</code> should return true.');",
-        "assert(telephoneCheck(\"1(555)555-5555\") === true, 'message: <code>telephoneCheck(\"1(555)555-5555\")</code> should return true.');",
-        "assert(telephoneCheck(\"555-5555\") === false, 'message: <code>telephoneCheck(\"555-5555\")</code> should return false.');",
-        "assert(telephoneCheck(\"5555555\") === false, 'message: <code>telephoneCheck(\"5555555\")</code> should return false.');",
-        "assert(telephoneCheck(\"1 555)555-5555\") === false, 'message: <code>telephoneCheck(\"1 555)555-5555\")</code> should return false.');",
-        "assert(telephoneCheck(\"1 555 555 5555\") === true, 'message: <code>telephoneCheck(\"1 555 555 5555\")</code> should return true.');",
-        "assert(telephoneCheck(\"1 456 789 4444\") === true, 'message: <code>telephoneCheck(\"1 456 789 4444\")</code> should return true.');",
-        "assert(telephoneCheck(\"123**&!!asdf#\") === false, 'message: <code>telephoneCheck(\"123**&!!asdf#\")</code> should return false.');",
-        "assert(telephoneCheck(\"55555555\") === false, 'message: <code>telephoneCheck(\"55555555\")</code> should return false.');",
-        "assert(telephoneCheck(\"(6054756961)\") === false, 'message: <code>telephoneCheck(\"(6054756961)\")</code> should return false');",
-        "assert(telephoneCheck(\"2 (757) 622-7382\") === false, 'message: <code>telephoneCheck(\"2 (757) 622-7382\")</code> should return false.');",
-        "assert(telephoneCheck(\"0 (757) 622-7382\") === false, 'message: <code>telephoneCheck(\"0 (757) 622-7382\")</code> should return false.');",
-        "assert(telephoneCheck(\"-1 (757) 622-7382\") === false, 'message: <code>telephoneCheck(\"-1 (757) 622-7382\")</code> should return false');",
-        "assert(telephoneCheck(\"2 757 622-7382\") === false, 'message: <code>telephoneCheck(\"2 757 622-7382\")</code> should return false.');",
-        "assert(telephoneCheck(\"10 (757) 622-7382\") === false, 'message: <code>telephoneCheck(\"10 (757) 622-7382\")</code> should return false.');",
-        "assert(telephoneCheck(\"27576227382\") === false, 'message: <code>telephoneCheck(\"27576227382\")</code> should return false.');",
-        "assert(telephoneCheck(\"(275)76227382\") === false, 'message: <code>telephoneCheck(\"(275)76227382\")</code> should return false.');",
-        "assert(telephoneCheck(\"2(757)6227382\") === false, 'message: <code>telephoneCheck(\"2(757)6227382\")</code> should return false.');",
-        "assert(telephoneCheck(\"2(757)622-7382\") === false, 'message: <code>telephoneCheck(\"2(757)622-7382\")</code> should return false.');",
-        "assert(telephoneCheck(\"555)-555-5555\") === false, 'message: <code>telephoneCheck(\"555)-555-5555\")</code> should return false.');",
-        "assert(telephoneCheck(\"(555-555-5555\") === false, 'message: <code>telephoneCheck(\"(555-555-5555\")</code> should return false.');",
-        "assert(telephoneCheck(\"(555)5(55?)-5555\") === false, 'message: <code>telephoneCheck(\"(555)5(55?)-5555\")</code> should return false.');"
+        "assert(/(\\\\\\[.*\\\\\\]|\\$\\$.*\\$\\$)/g.test(expression), 'message: The expression should be enclosed by Math LaTeX equation delimiters <code>\\[ \\]</code> or <code>$$ $$</code>')",
+        "assert(true, 'message: This test should render <code>true</code>')"
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "RegExp"
+        "LaTeX"
       ],
       "challengeType": 5,
       "translations": {

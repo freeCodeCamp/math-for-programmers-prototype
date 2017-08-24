@@ -118,6 +118,12 @@ blockquote {
 .Tests {
   width: 450px;
   text-align: left; }
+  .Tests h2 {
+    color: #006400;
+    font-weight: bold; }
+    .Tests h2 i {
+      font-size: 1.2em;
+      margin: auto 10px 0px 5px; }
   .Tests .test {
     padding: 7px 6px; }
     .Tests .test i {

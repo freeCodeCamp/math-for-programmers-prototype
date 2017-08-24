@@ -44,6 +44,12 @@ const Tests = ({ tests }) => {
 
   return (
     <div className='Tests'>
+      {tests.every(t => t.status === 'passed')
+        ? <h2>
+            <i aria-hidden='true' className={'fa fa-check'} />
+            All Tests Passed
+          </h2>
+        : null}
       {testsMsgs}
     </div>
   );

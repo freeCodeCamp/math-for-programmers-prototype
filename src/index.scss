@@ -188,6 +188,16 @@ blockquote {
 
   text-align: left;
 
+  h2 {
+    color: $dark-green;
+    font-weight: bold;
+
+    i {
+      font-size: 1.2em;
+      margin: auto 10px 0px 5px;
+    }
+  }
+
   .test {
     padding: 7px 6px;
     i {

@@ -1,5 +1,11 @@
-import { UPDATE_CODE, RUN_TESTS, SET_CHALLENGE } from '../actions';
+import {
+  UPDATE_CODE,
+  RUN_TESTS,
+  SET_CHALLENGE,
+  RESET_CURRENT_CHALLENGE_TESTS
+} from '../actions';
 import data from '../data.json';
+import { assert } from 'chai';
 
 // Add status to each test
 data.challenges.forEach(c => {
@@ -10,12 +16,13 @@ data.challenges.forEach(c => {
 });
 
 const initState = {
-  code: '\\[ f(n) = n^5 + 4n^2 + 2 |_{n=17} \\]',
+  code: data.challenges[0].challengeSeed.join('\n'),
   challenges: data.challenges,
   activeChallenge: 0
 };
 
 const reducer = (state = initState, action) => {
+  const newState = { ...state };
   switch (action.type) {
     case UPDATE_CODE:
       return {
@@ -23,13 +30,40 @@ const reducer = (state = initState, action) => {
         code: action.code
       };
     case RUN_TESTS:
-      console.log('Running Tests');
-      return state;
+      newState.challenges[state.activeChallenge].tests = state.challenges[
+        state.activeChallenge
+      ].tests.map(t => {
+        const strCode = t.test
+          .replace(/^assert\(/g, '')
+          .replace(/, 'message.*/, '');
+
+        try {
+          // eslint-disable-next-line no-eval
+          const res = eval(
+            strCode.replace('expression', JSON.stringify(state.code))
+          );
+          assert(res, 'Tmp message');
+          t.status = 'passed';
+        } catch (e) {
+          console.log(e);
+          t.status = 'failed';
+        }
+        return t;
+      });
+      return newState;
     case SET_CHALLENGE:
       return {
         ...state,
         activeChallenge: Number.parseInt(action.index, 10)
       };
+    case RESET_CURRENT_CHALLENGE_TESTS:
+      newState.challenges[state.activeChallenge].tests = state.challenges[
+        state.activeChallenge
+      ].tests.map(t => {
+        t.status = 'init';
+        return t;
+      });
+      return newState;
     default:
       return state;
   }

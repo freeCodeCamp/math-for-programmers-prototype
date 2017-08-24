@@ -28,7 +28,7 @@ class Editor extends Component {
   codeChange(code) {
     const { updateCode } = this.props;
     const { waiting, timer } = this.state;
-    const delay = 300;
+    const delay = 500;
 
     if (waiting) {
       clearTimeout(timer);

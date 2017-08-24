@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { runTests, setChallenge } from '../actions';
+import { runTests, setChallenge, resetCurrentChallengeTests } from '../actions';
 
 const ChallengeControl = ({
   activeChallenge,
@@ -67,7 +67,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   runTests: () => dispatch(runTests()),
-  setChallenge: index => dispatch(setChallenge(index))
+  setChallenge: index => {
+    dispatch(resetCurrentChallengeTests());
+    dispatch(setChallenge(index));
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChallengeControl);

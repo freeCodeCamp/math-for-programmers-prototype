@@ -13,7 +13,7 @@ const Preview = ({ code }) => {
         <MathJax.Node>
           {code
             ? code.replace(mathDelimStart, '').replace(mathDelimEnd, '')
-            : null}
+            : ''}
         </MathJax.Node>
       </MathJax.Context>
     </div>
