@@ -8,9 +8,9 @@
       "id": "",
       "title": "Write your first Fraction",
       "description": [
-        "To write your first vertical fraction using LaTeX, you'll need to add <code>\\frac{1}{2}</code>, where 1 and 2 can be any valid expression.",
-        "Notice that if you don't add the specified syntax (for example <code>3/4</code>), the fraction will be rendered horizontally.",
-        "If you did it correctly the "
+        "To write your first vertical fraction using LaTeX, you'll need to add <code>\\frac{1}{2}</code>, where 1 and 2 can be any valid expression or number.",
+        "Notice that if you don't use this special syntax (for example <code>3/4</code>), the fraction will be rendered horizontally. If you did it correctly the fraction will be rendered vertically",
+        "In LaTeX, is necessary to enclose every math expressions between <code>\\[ \\]</code>  or <code>$$ $$</code> "
       ],
       "challengeSeed": [
         "% Write your LaTeX expression inside the delimiters",
@@ -22,7 +22,7 @@
       ],
       "tests": [
         "assert(/(\\\\\\[.*\\\\\\]|\\$\\$.*\\$\\$)/g.test(expression), 'message: The expression should be enclosed by Math LaTeX equation delimiters <code>\\[ \\]</code> or <code>$$ $$</code>')",
-        "assert(true, 'message: This test should render <code>true</code>')"
+        "assert(/\\\\frac(\\s*{.*}\\s*{.*}|\\s*(\\d|\\w)\\s*(\\d|\\w))/g.test(expression), 'message: The expression should have a valid fraction.')"
       ],
       "type": "bonfire",
       "MDNlinks": [

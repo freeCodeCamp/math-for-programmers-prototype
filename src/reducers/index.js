@@ -42,10 +42,9 @@ const reducer = (state = initState, action) => {
           const res = eval(
             strCode.replace('expression', JSON.stringify(state.code))
           );
-          assert(res, 'Tmp message');
+          assert(res);
           t.status = 'passed';
         } catch (e) {
-          console.log(e);
           t.status = 'failed';
         }
         return t;
