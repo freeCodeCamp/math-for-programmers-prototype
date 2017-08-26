@@ -1,11 +1,13 @@
 # Math LaTeX Challenges
 
-Prototype for freeCodeCamp's Math LaTeX Curriculum
+A prototype for freeCodeCamp's LaTeX-based Math for Programmers Curriculum
 
 ### Installation
 
+- Clone this repository
 - Open a terminal at the project's root folder and run `npm i`.
-- Install SASS. 
+- Install Sass:
   - [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) for your OS.
   - Run `gem install sass`
-  - Verify SASS installation with `sass -v`.
+  - Verify Sass installation with `sass -v`.
+- run `npm run start`
