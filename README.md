@@ -1,6 +1,10 @@
 # Math LaTeX Challenges
 
-A prototype for freeCodeCamp's LaTeX-based Math for Programmers Curriculum
+A prototype for freeCodeCamp's LaTeX-based Math for Programmers Curriculum. 
+
+### Demo 
+
+You can [try it live here](https://freecodecamp.github.io/math-for-programmers-prototype/).
 
 ### Installation
 
