@@ -53,6 +53,7 @@ const reducer = (state = initState, action) => {
     case SET_CHALLENGE:
       return {
         ...state,
+        code: state.challenges[action.index].challengeSeed.join('\n'),
         activeChallenge: Number.parseInt(action.index, 10)
       };
     case RESET_CURRENT_CHALLENGE_TESTS:

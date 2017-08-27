@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { updateCode } from '../actions';
 
 // CodeMirror Imports
-import CodeMirror from 'react-codemirror';
+import CodeMirror from 'react-codemirror2';
 import 'codemirror/mode/stex/stex';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/monokai.css';
@@ -25,7 +25,7 @@ class Editor extends Component {
     Prevents uppdating the code too fast
     for correct Preview rendering
   */
-  codeChange(code) {
+  codeChange(cm, meta, code) {
     const { updateCode } = this.props;
     const { waiting, timer } = this.state;
     const delay = 500;
@@ -59,6 +59,7 @@ class Editor extends Component {
     const { code } = this.props;
     const options = {
       lineNumbers: true,
+      lineWrapping: true,
       extraKeys: {
         Tab: this.tabToSpaces
       },
@@ -70,7 +71,7 @@ class Editor extends Component {
     return (
       <CodeMirror
         autoFocus={true}
-        onChange={code => this.codeChange(code)}
+        onValueChange={this.codeChange}
         options={options}
         value={code}
       />
