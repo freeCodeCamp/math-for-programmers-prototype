@@ -38,7 +38,7 @@ const ChallengeControl = ({
           </option>)
         )}
       </select>
-      <button onClick={runTests}>Run Tests (Ctrl + Enter)</button>
+      <button onClick={runTests}>Run Tests (Ctrl/Cmd + Enter)</button>
       <button onClick={prevChallenge}>Prev Challenge</button>
       <button onClick={nextChallenge}>Next Challenge</button>
       <button

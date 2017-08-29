@@ -10,7 +10,7 @@ import Tests from '../components/Tests';
 
 class App extends Component {
   componentDidMount() {
-    window.addEventListener('keypress', e => {
+    window.addEventListener('keydown', e => {
       if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
         e.preventDefault();
         this.props.runTests();

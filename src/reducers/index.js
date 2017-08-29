@@ -16,7 +16,7 @@ data.challenges.forEach(c => {
 });
 
 const initState = {
-  code: data.challenges[0].challengeSeed.join('\n'),
+  code: '$$\n' + data.challenges[0].challengeSeed.join('\n') + '\n$$',
   challenges: data.challenges,
   activeChallenge: 0
 };

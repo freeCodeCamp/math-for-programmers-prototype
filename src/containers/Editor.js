@@ -70,8 +70,32 @@ class Editor extends Component {
 
     return (
       <CodeMirror
-        autoFocus={true}
+        editorDidMount={cm => cm.focus()}
         onValueChange={this.codeChange}
+        onValueSet={cm => {
+          // Prevent First line from being edited
+          cm.markText(
+            { line: 0, ch: 0 },
+            { line: 1, ch: 0 },
+            {
+              atomic: true,
+              inclusiveLeft: true,
+              readOnly: true
+            }
+          );
+          // Prevent Last line from being edited
+          const lastLine = cm.lineCount() - 1;
+          cm.markText(
+            { line: lastLine, ch: 0 },
+            { line: lastLine },
+            {
+              atomic: true,
+              inclusiveLeft: true,
+              inclusiveRight: true,
+              readOnly: true
+            }
+          );
+        }}
         options={options}
         value={code}
       />

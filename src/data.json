@@ -10,8 +10,7 @@
         "In LaTeX, is necessary to enclose every math expressions between <code>\\[ \\]</code>  or <code>$$ $$</code> "
       ],
       "challengeSeed": [
-        "% Write your LaTeX expression inside the delimiters",
-        "\\[  \\]",
+        "% Write your LaTeX expression here",
         ""
       ],
       "tests": [
