@@ -30,7 +30,6 @@
       "challengeSeed": [
         "% This is what appears in the LaTeX editor (which is a CodeMirror-styled text area).",
         "% You can add multiple lines of comments if necessary, and anything that follows a \"%\" will be interpreted as a comment.",
-        "\\[  \\]",
         ""
       ],
       "tests": [
