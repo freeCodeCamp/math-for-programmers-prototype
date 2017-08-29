@@ -38,9 +38,13 @@ const reducer = (state = initState, action) => {
           .replace(/, 'message.*/, '');
 
         try {
+          // Remove LaTeX Math delimiters before the test running
+          const codeNoDelims = state.code
+            .replace(/^.*\n/g, '')
+            .replace(/\$\$.*$/g, '');
           // eslint-disable-next-line no-eval
           const res = eval(
-            strCode.replace('expression', JSON.stringify(state.code))
+            strCode.replace('expression', JSON.stringify(codeNoDelims))
           );
           assert(res);
           t.status = 'passed';
