@@ -5,40 +5,42 @@
     {
       "title": "Write your first Fraction",
       "description": [
-        "To write your first vertical fraction using LaTeX, you'll need to write <code>\\frac</code> followed by two members: the numerator and the denominator. Both members can be a single character, or a valid expression enclosed by curly brackets <code>{}</code>.",
-        "All of these are examples of valid fractions in LaTeX: <code>\\frac12</code>, <code>\\frac{1+3}4</code>, <code>\\frac1{2n+4}</code> or <code>\\frac{1}{2}</code>.",
-        "LaTeX ignores most of the whitespace included, so an expression like <code>\\frac12</code> is equivalent to:",
-        "<blockquote>\\frac        1 \n 2</blockquote>",
-        "Notice that if you don't use this special syntax (for example <code>3/4</code>), the fraction will be rendered horizontally. If you did it correctly the fraction will be rendered vertically and all the tests will pass."
+        "To write your first vertical fraction using LaTeX, you'll need to add <code>\\frac{1}{2}</code>, where 1 and 2 can be any valid expression or number.",
+        "Notice that if you don't use this special syntax (for example <code>3/4</code>), the fraction will be rendered horizontally. If you did it correctly the fraction will be rendered vertically",
+        "In LaTeX, is necessary to enclose every math expressions between <code>\\[ \\]</code>  or <code>$$ $$</code> "
       ],
       "challengeSeed": [
-        "% Write your LaTeX expression here",
+        "% Write your LaTeX expression inside the delimiters",
+        "\\[  \\]",
         ""
       ],
       "tests": [
-        "assert(/\\\\frac\\s*({\\s*.+\\s*}|[^\\s{}()\\[\\]\\\\\\/])\\s*({\\s*.+\\s*}|[^\\s{}()\\[\\]\\\\\\/])/g.test(expression), 'message: The expression should have a valid fraction.')"
+        "assert(/(\\\\\\[.*\\\\\\]|\\$\\$.*\\$\\$)/g.test(expression), 'message: The expression should be enclosed by Math LaTeX equation delimiters <code>\\[ \\]</code> or <code>$$ $$</code>')",
+        "assert(/\\\\frac(\\s*{.*}\\s*{.*}|\\s*(\\d|\\w)\\s*(\\d|\\w))/g.test(expression), 'message: The expression should have a valid fraction.')"
       ],
       "solutions": [
         "\\[ \\frac{1}{2} \\]"
       ]
     },
     {
-      "title": "Example challenge",
+      "title": "Compare Fractions that have Common Denominators",
       "description": [
-        "This is where we put the instructions for the challenge.",
-        "We can create new paragraphs by adding new strings to this array."
+        "When comparing fractions with the same denominator, we can just compare the numerators.",
+        "For example, if we compare 3/5 and 4/5 we are comparing 3 lots of 1/5 and 4 lots of 1/5. Since 3 is less than 4, 3/7 < 4/7."
       ],
       "challengeSeed": [
-        "% This is what appears in the LaTeX editor (which is a CodeMirror-styled text area).",
-        "% You can add multiple lines of comments if necessary, and anything that follows a \"%\" will be interpreted as a comment.",
-        ""
+        "% Replace the ? below with \\lt (less than), \\gt (greater than) or = (equal).",
+        "\\[",
+        "\\frac{7}{9} ? \\frac{4}{9}",
+        "\\]"
       ],
       "tests": [
-        "assert(/(\\\\\\[.*\\\\\\]|\\$\\$.*\\$\\$)/g.test(expression), 'message: The first part of each test is an assert statement that will run against the code the camper typed in.')",
-        "assert(/\\\\frac(\\s*{.*}\\s*{.*}|\\s*(\\d|\\w)\\s*(\\d|\\w))/g.test(expression), 'message: Anything following the \"message:\" will be the message associated with a test.')"
+        "assert(/\\\\frac\\{7\\}\\{9\\}/g.test(expression), 'message: Compare the fraction 7/9')",
+        "assert(/\\\\frac\\{4\\}\\{9\\}/g.test(expression), 'message: Compare the fraction 4/9')",
+        "assert(/\\\\frac\\{7\\}\\{9\\}\\s*\\\\gt\\s*\\\\frac\\{4\\}\\{9\\}/g.test(expression), 'message: Add the correct comparison operator between the fractions.')"
       ],
       "solutions": [
-        "% This solution is used purely for automated testing. It ensures that the following test will indeed get all the code to pass. \\[ \\frac{1}{2} \\]"
+        "%  \\[ \\frac{7}{9} \\gt \\frac{4}{9} \\]"
       ]
     }
   ]
