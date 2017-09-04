@@ -49,9 +49,8 @@
       ],
       "challengeSeed": [
         "% Replace the ? below with \\lt (less than), \\gt (greater than) or = (equal).",
-        "\\[",
         "\\frac{7}{9} ? \\frac{4}{9}",
-        "\\]"
+        ""
       ],
       "tests": [
         "assert(/\\\\frac\\{7\\}\\{9\\}/g.test(expression), 'message: Compare the fraction 7/9')",
@@ -59,7 +58,7 @@
         "assert(/\\\\frac\\{7\\}\\{9\\}\\s*\\\\gt\\s*\\\\frac\\{4\\}\\{9\\}/g.test(expression), 'message: Add the correct comparison operator between the fractions.')"
       ],
       "solutions": [
-        "%  \\[ \\frac{7}{9} \\gt \\frac{4}{9} \\]"
+        "\\[ \\frac{7}{9} \\gt \\frac{4}{9} \\]"
       ]
     }
 
