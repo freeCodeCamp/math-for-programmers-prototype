@@ -9,6 +9,11 @@ const ChallengeInfo = ({ title, description }) => {
       return <p dangerouslySetInnerHTML={{ __html: x }} key={i} />;
     }
 
+    const isNotInline =
+      x.match(/<math>/g).length === 1 &&
+      x.startsWith('<math>') &&
+      x.endsWith('</math>');
+
     let newX = x;
     const objArr = [];
     while (newX.includes('<math>')) {
@@ -17,14 +22,18 @@ const ChallengeInfo = ({ title, description }) => {
       objArr.push(
         <p
           dangerouslySetInnerHTML={{ __html: pElem }}
-          style={{ display: 'inline' }}
+          style={{ display: isNotInline ? 'block' : 'inline' }}
         />
       );
 
       newX = newX.slice(tmpIndx + 6);
       tmpIndx = newX.indexOf('</math>');
       const mathExp = newX.slice(0, tmpIndx);
-      objArr.push(<MathJax.Node inline={true}>{mathExp}</MathJax.Node>);
+      objArr.push(
+        <MathJax.Node inline={!isNotInline}>
+          {mathExp}
+        </MathJax.Node>
+      );
       newX = newX.slice(tmpIndx + 7);
     }
 

@@ -9,7 +9,7 @@ const Preview = ({ code }) => {
   return (
     <div className='Preview'>
       <h3>Preview:</h3>
-      <MathJax.Context>
+      <MathJax.Context className='MathView'>
         <MathJax.Node>
           {code
             ? code.replace(mathDelimStart, '').replace(mathDelimEnd, '')

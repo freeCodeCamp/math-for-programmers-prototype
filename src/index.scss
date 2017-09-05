@@ -171,15 +171,18 @@ blockquote {
 
   align-items: left;
   justify-content: left;
-  h3 {
+  > h3 {
     margin-bottom: 5px;
     margin-left: 10px;
   }
+  > span {
+    margin-left: 40px;
+  }
 }
 
-.MJXc-display {
-  font-size: 1.2em !important;
-  margin-left: 40px !important;
+.MathJax_CHTML {
+  font-size: 1.5em !important;
+  margin: auto 3px !important;
 }
 
 .Tests {

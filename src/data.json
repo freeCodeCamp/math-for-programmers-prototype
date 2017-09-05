@@ -10,7 +10,8 @@
         "We can add inline code by using <b>code</b> tag <code>\\frac12</code>.",
         "We can add a block of code by using <b>blockquote</b> tag:",
         "<blockquote>\\frac12</blockquote>",
-        "Add an inline LaTeX expression by using <b>math</b> tag: <math>f(x)= x^2 + 3x + 4</math> this another <math>\\frac35</math>"
+        "Add an inline LaTeX expression by using <b>math</b> tag: <math>f(x)= x^2 + 3x + 4</math> this another <math>\\frac{3}{5}</math> and another <math>f(x)= x^2 + 3x + 4</math>",
+        "<math>f(x)= x^2 + 6x - 2</math>"
       ],
       "challengeSeed": [
         "% This is what appears in the LaTeX editor (which is a CodeMirror-styled text area).",
@@ -44,7 +45,7 @@
       "title": "Compare Fractions that have Common Denominators",
       "description": [
         "When comparing fractions with the same denominator, we can just compare the numerators.",
-        "For example, if we compare 3/5 and 4/5 we are comparing 3 lots of 1/5 and 4 lots of 1/5. Since 3 is less than 4, 3/7 < 4/7."
+        "For example, if we compare <math>\\frac35</math> and <math>\\frac45</math> we are comparing <b>3</b> lots of <math>\\frac15</math> and <b>4</b> lots of <math>\\frac15</math>.  Since 3 is less than 4, <math>\\frac37 \\lt \\frac47</math>."
       ],
       "challengeSeed": [
         "% Replace the ? below with \\lt (less than), \\gt (greater than) or = (equal).",
