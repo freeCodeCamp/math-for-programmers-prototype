@@ -3,43 +3,58 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as MathJax from 'react-mathjax-updated';
 
+// Converts all math tag to MathJax
+const parseMathJax = (str, i) => {
+  const isBlock =
+    str.match(/<math>/g).length === 1 &&
+    str.startsWith('<math>') &&
+    str.endsWith('</math>');
+
+  let index = 0;
+  const objArr = [];
+  while (str.includes('<math>')) {
+    let tmpIndx = str.indexOf('<math>');
+    const pStr = str.slice(0, tmpIndx);
+    objArr.push(
+      <p
+        dangerouslySetInnerHTML={{ __html: pStr }}
+        key={`in${index}`}
+        style={{ display: isBlock ? 'block' : 'inline' }}
+      />
+    );
+    index++;
+
+    str = str.slice(tmpIndx + 6);
+    tmpIndx = str.indexOf('</math>');
+    const mathExp = str.slice(0, tmpIndx);
+    objArr.push(
+      <MathJax.Node inline={!isBlock} key={`in${index}`}>
+        {mathExp}
+      </MathJax.Node>
+    );
+    index++;
+    str = str.slice(tmpIndx + 7);
+  }
+
+  if (str) {
+    objArr.push(
+      <p
+        dangerouslySetInnerHTML={{ __html: str }}
+        key={'lastelem'}
+        style={{ display: 'inline' }}
+      />
+    );
+  }
+
+  return <div key={i}>{objArr}</div>;
+};
+
 const ChallengeInfo = ({ title, description }) => {
   const desc = description.map((x, i) => {
     if (!x.includes('<math>')) {
       return <p dangerouslySetInnerHTML={{ __html: x }} key={i} />;
     }
-
-    const isNotInline =
-      x.match(/<math>/g).length === 1 &&
-      x.startsWith('<math>') &&
-      x.endsWith('</math>');
-
-    let newX = x;
-    const objArr = [];
-    while (newX.includes('<math>')) {
-      let tmpIndx = newX.indexOf('<math>');
-      const pElem = newX.slice(0, tmpIndx);
-      objArr.push(
-        <p
-          dangerouslySetInnerHTML={{ __html: pElem }}
-          style={{ display: isNotInline ? 'block' : 'inline' }}
-        />
-      );
-
-      newX = newX.slice(tmpIndx + 6);
-      tmpIndx = newX.indexOf('</math>');
-      const mathExp = newX.slice(0, tmpIndx);
-      objArr.push(<MathJax.Node inline={!isNotInline}>{mathExp}</MathJax.Node>);
-      newX = newX.slice(tmpIndx + 7);
-    }
-    if (newX) {
-      objArr.push(<p
-        dangerouslySetInnerHTML={{ __html: newX }}
-        style={{ display: 'inline' }}
-      />);
-    }
-
-    return <div key={i}>{objArr}</div>;
+    return parseMathJax(x, i);
   });
 
   return (
