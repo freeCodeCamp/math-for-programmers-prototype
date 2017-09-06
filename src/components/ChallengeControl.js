@@ -43,7 +43,7 @@ const ChallengeControl = ({
       <button onClick={nextChallenge}>Next Challenge</button>
       <button
         onClick={() =>
-          window.open('https://github.com/juandaco/math-latex/issues')}
+          window.open('https://github.com/freecodecamp/math-for-programmers-prototype/issues')}
         >
         Bugs
       </button>
