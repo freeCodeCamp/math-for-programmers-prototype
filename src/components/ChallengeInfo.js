@@ -29,12 +29,14 @@ const ChallengeInfo = ({ title, description }) => {
       newX = newX.slice(tmpIndx + 6);
       tmpIndx = newX.indexOf('</math>');
       const mathExp = newX.slice(0, tmpIndx);
-      objArr.push(
-        <MathJax.Node inline={!isNotInline}>
-          {mathExp}
-        </MathJax.Node>
-      );
+      objArr.push(<MathJax.Node inline={!isNotInline}>{mathExp}</MathJax.Node>);
       newX = newX.slice(tmpIndx + 7);
+    }
+    if (newX) {
+      objArr.push(<p
+        dangerouslySetInnerHTML={{ __html: newX }}
+        style={{ display: 'inline' }}
+      />);
     }
 
     return <div key={i}>{objArr}</div>;

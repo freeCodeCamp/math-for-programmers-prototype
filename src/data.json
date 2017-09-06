@@ -3,15 +3,19 @@
   "order": 1,
   "challenges": [
     {
-      "title": "Example challenge",
+      "title": "Example Challenge",
       "description": [
         "This is where we put the instructions for the challenge.",
         "We can create new paragraphs by adding new strings to this array.",
-        "We can add inline code by using <b>code</b> tag <code>\\frac12</code>.",
-        "We can add a block of code by using <b>blockquote</b> tag:",
-        "<blockquote>\\frac12</blockquote>",
-        "Add an inline LaTeX expression by using <b>math</b> tag: <math>f(x)= x^2 + 3x + 4</math> this another <math>\\frac{3}{5}</math> and another <math>f(x)= x^2 + 3x + 4</math>",
-        "<math>f(x)= x^2 + 6x - 2</math>"
+        "We can add inline code by using the <b>code</b> tag: <code>\\frac12</code>.",
+        "We can add a block of code by using the <b>blockquote</b> tag:",
+        "<blockquote>\\frac{ x^2 + 6x - 2 }{ x }\n\\f(x) = x^2 + 3x - 4</blockquote>",
+        "We can use any sort of <b>html tags</b> like this: <ul><li><b>This text is bold</b></li><li><em>This text is in italics</em></li><ul>",
+        "We can add an inline LaTeX expressions by using the <b>math</b> tag: <math>x^2 + 2</math> and <math>3 \\lt 5</math>.",
+        "We can add a block LaTeX expression by using the <b>math</b> tag as the only element:",
+        "<math>f(x)= x^2 + 3x - 4</math>",
+        "The code for all the cahllenges is in <code>src/data.json</code>, so you can add your own challenges there.",
+        "If you're having problems writing valid JSON, take a look at the helper command line utility <code>toJSONString.js</code>."
       ],
       "challengeSeed": [
         "% This is what appears in the LaTeX editor (which is a CodeMirror-styled text area).",

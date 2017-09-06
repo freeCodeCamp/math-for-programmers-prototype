@@ -2,10 +2,19 @@
 
 /* Command line Utility to convert
  * Regular expressions to valid JSON strings.
+ *
+ * INSTRUCTIONS:
+ * 1. Add your code to the str variable 
+ * as a ES6 template string. 
+ * 2. Save the file.
+ * 3. Run in the command line with: 
+ * node toJSONString.js
  */
 
-// Read the first argument given to the
-const str = process.argv[2];
+const str = `function tmp(str){
+  console.log('Try');
+  }`;
 
 // Print the answer to the stdout
-console.log(JSON.stringify(str.toString()));
+console.log(JSON.stringify(str));
+
