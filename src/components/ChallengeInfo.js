@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import * as MathJax from 'react-mathjax-updated';
 
 const ChallengeInfo = ({ title, description }) => {
-
   const desc = description.map((x, i) => {
     const re = /(<math>(?:(?!<\/math>).)*<\/math>)/g;
     const hasMath = re.test(x);
@@ -14,9 +13,8 @@ const ChallengeInfo = ({ title, description }) => {
       const isBlock = (x.match(re) || []).length === 1;
 
       const elemArr = strArr.map((str, index) => {
-        const hasMath = (/<math>/g).test(str);
-
-        if (hasMath) {
+        const isMathNode = (/<math>/g).test(str);
+        if (isMathNode) {
           const newStr = str.replace(/(<math>|<\/math>)/g, '');
           return (
             <MathJax.Node inline={!isBlock} key={`math${index}`}>
@@ -24,6 +22,7 @@ const ChallengeInfo = ({ title, description }) => {
             </MathJax.Node>
           );
         }
+
         return (
           <p
             dangerouslySetInnerHTML={{ __html: str }}
