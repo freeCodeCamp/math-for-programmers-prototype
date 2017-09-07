@@ -29,21 +29,20 @@ const ChallengeControl = ({
         onChange={e => setChallenge(e.target.value)}
         value={activeChallenge}
         >
-        {challengeTitles.map((title, i) =>
-          (<option
-            key={`option${i}`}
-            value={i}
-            >
+        {challengeTitles.map((title, i) => (
+          <option key={`option${i}`} value={i}>
             {`${padNumber(i + 1)}: ${title}`}
-          </option>)
-        )}
+          </option>
+        ))}
       </select>
       <button onClick={runTests}>Run Tests (Ctrl/Cmd + Enter)</button>
       <button onClick={prevChallenge}>Prev Challenge</button>
       <button onClick={nextChallenge}>Next Challenge</button>
       <button
         onClick={() =>
-          window.open('https://github.com/freecodecamp/math-for-programmers-prototype/issues')}
+          window.open(
+            'https://github.com/freecodecamp/math-for-programmers-prototype/issues'
+          )}
         >
         Bugs
       </button>
