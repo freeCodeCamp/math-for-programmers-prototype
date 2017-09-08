@@ -41,7 +41,8 @@ const ChallengeControl = ({
       <button
         onClick={() =>
           window.open(
-            'https://github.com/freecodecamp/math-for-programmers-prototype/issues'
+            'https://github.com/freecodecamp/' +
+              'math-for-programmers-prototype/issues'
           )}
         >
         Bugs
