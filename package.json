@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "chai": "^4.1.1",
+    "match-at": "^0.1.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-codemirror2": "^0.0.13",
