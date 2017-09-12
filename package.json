@@ -15,7 +15,8 @@
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "eslint-plugin-prefer-object-spread": "^1.2.1"
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
+    "prettier": "^1.6.1"
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"yarn run scss-watch\"",

@@ -4,7 +4,7 @@ import {
   SET_CHALLENGE,
   RESET_CURRENT_CHALLENGE_TESTS
 } from '../actions';
-import data from '../data.json';
+import data from '../data2.json';
 import { assert } from 'chai';
 
 // Add status to each test
