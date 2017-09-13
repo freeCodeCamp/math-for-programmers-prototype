@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { updateCode } from '../actions';
 
 // CodeMirror Imports
 import CodeMirror from 'react-codemirror2';
@@ -108,14 +106,4 @@ Editor.propTypes = {
   updateCode: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => ({
-  code: state.code
-});
-
-const mapDispatchToProps = dispatch => ({
-  updateCode: code => {
-    dispatch(updateCode(code));
-  }
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Editor);
+export default Editor;

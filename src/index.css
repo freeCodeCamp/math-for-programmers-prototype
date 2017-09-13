@@ -25,7 +25,8 @@ blockquote {
   background-color: #fffbe5; }
 
 .App {
-  width: 100%;
+  width: 100vw;
+  padding: 0;
   text-align: center; }
   .App h1 {
     margin-bottom: 30px; }
@@ -33,12 +34,19 @@ blockquote {
 .content {
   display: flex;
   flex-direction: row;
-  width: 950px;
+  width: 90%;
+  margin-left: 5%;
   justify-content: space-between; }
+
+.content-left {
+  width: 33%;
+  padding-top: 40px;
+  margin-left: 0; }
 
 .ChallengeInfo {
   width: 400px;
-  margin-top: 60px;
+  margin-top: 40px;
+  margin-right: 60px;
   text-align: left; }
   .ChallengeInfo a:link,
   .ChallengeInfo a:visited {

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import * as MathJax from 'react-mathjax-updated';
 
 const ChallengeInfo = ({ title, description }) => {
@@ -48,13 +47,8 @@ const ChallengeInfo = ({ title, description }) => {
 };
 
 ChallengeInfo.propTypes = {
-  description: PropTypes.array,
+  description: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string
 };
 
-const mapStateToProps = state => ({
-  title: state.challenges[state.activeChallenge].title,
-  description: state.challenges[state.activeChallenge].description
-});
-
-export default connect(mapStateToProps)(ChallengeInfo);
+export default ChallengeInfo;

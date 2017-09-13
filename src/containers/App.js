@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { runTests } from '../actions';
+import { updateCode, runTests } from '../actions';
 import Editor from './Editor';
 import Preview from '../components/Preview';
 import ChallengeInfo from '../components/ChallengeInfo';
-import ChallengeControl from '../components/ChallengeControl';
-import Tests from '../components/Tests';
+// import ChallengeControl from '../components/ChallengeControl';
+import ChallengeTree from '../components/ChallengeTree';
+// import Tests from '../components/Tests';
 
 class App extends Component {
   componentDidMount() {
@@ -19,18 +20,22 @@ class App extends Component {
   }
 
   render() {
+    const { code, data, description, title, updateCode } = this.props;
     return (
       <div className='App'>
         <h1>Math LaTeX Challenges</h1>
         <div className='content'>
           <div className='content-left'>
-            <ChallengeControl />
-            <ChallengeInfo />
+            <ChallengeTree data={data} />
+            {/* <ChallengeControl /> */}
+          </div>
+          <div className='content-center'>
+            <ChallengeInfo description={description} title={title} />
           </div>
           <div className='content-right'>
-            <Editor />
-            <Preview />
-            <Tests />
+            <Editor code={code} updateCode={updateCode} />
+            <Preview code={code} />
+            {/* <Tests tests={challenge.tests}/> */}
           </div>
         </div>
       </div>
@@ -39,11 +44,24 @@ class App extends Component {
 }
 
 App.propTypes = {
-  runTests: PropTypes.func
+  code: PropTypes.string,
+  data: PropTypes.object,
+  description: PropTypes.arrayOf(PropTypes.string),
+  runTests: PropTypes.func,
+  title: PropTypes.string,
+  updateCode: PropTypes.func
 };
 
-const mapDispatchToProps = dispatch => ({
-  runTests: () => dispatch(runTests())
+const mapStateToProps = state => ({
+  code: state.code,
+  data: state.data,
+  description: state.challenge.description,
+  title: state.challenge.title
 });
 
-export default connect(null, mapDispatchToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  runTests: () => dispatch(runTests()),
+  updateCode: code => dispatch(updateCode(code))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

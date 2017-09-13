@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import * as MathJax from 'react-mathjax-updated';
 
 const Preview = ({ code }) => {
@@ -23,8 +22,4 @@ Preview.propTypes = {
   code: PropTypes.string.isRequired
 };
 
-const mapStateToProps = state => ({
-  code: state.code
-});
-
-export default connect(mapStateToProps)(Preview);
+export default Preview;

@@ -8,15 +8,16 @@ You can [try it live here](https://freecodecamp.github.io/math-for-programmers-p
 
 ### Installation
 
-- Clone this repository
+- Make sure that you have a recent version of Node and npm.
+- Clone this repository.
 - Open a terminal at the project's root folder and run `npm i`.
 - Install Sass:
   - [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) for your OS.
-  - Run `gem install sass`
+  - Run `gem install sass`.
   - Verify Sass installation with `sass -v`.
-- run `npm run start`
+- Run `npm run start`.
 
-#### Linux Setup
+### Linux Setup
 
 - Clone this repository
 - Install appropriate versions of node.js and npm:

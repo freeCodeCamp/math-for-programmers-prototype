@@ -52,7 +52,8 @@ blockquote {
 }
 
 .App {
-  width: 100%;
+  width: 100vw;
+  padding: 0;
 
   text-align: center;
   h1 {
@@ -64,15 +65,22 @@ blockquote {
   display: flex;
   flex-direction: row;
 
-  width: 950px;
+  width: 90%;
+  margin-left: 5%;
 
   justify-content: space-between;
 }
 
+.content-left {
+  width: 33%;
+  padding-top:  40px;
+  margin-left: 0;
+}
+
 .ChallengeInfo {
-  // font-size: 1.1em;
   width: 400px;
-  margin-top: 60px;
+  margin-top: 40px;
+  margin-right: 60px;
 
   text-align: left;
   a:link,

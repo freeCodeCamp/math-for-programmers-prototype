@@ -4,22 +4,9 @@ import {
   SET_CHALLENGE,
   RESET_CURRENT_CHALLENGE_TESTS
 } from '../actions';
-import data from '../data2.json';
 import { assert } from 'chai';
+import initState from './initState';
 
-// Add status to each test
-data.challenges.forEach(c => {
-  c.tests = c.tests.map(t => ({
-    test: t,
-    status: 'init'
-  }));
-});
-
-const initState = {
-  code: '$$\n' + data.challenges[0].challengeSeed.join('\n') + '\n$$',
-  challenges: data.challenges,
-  activeChallenge: 0
-};
 
 const reducer = (state = initState, action) => {
   const newState = { ...state };
