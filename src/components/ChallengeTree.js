@@ -2,36 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Treebeard } from 'react-treebeard';
 
-const simData = [
-  {
-    name: 'root',
-    toggled: true,
-    children: [
-      {
-        name: 'parent',
-        children: [{ name: 'child1' }, { name: 'child2' }]
-      },
-      {
-        name: 'loading parent',
-        loading: true,
-        children: []
-      },
-      {
-        name: 'parent',
-        children: [
-          {
-            name: 'nested parent',
-            children: [{ name: 'nested child 1' }, { name: 'nested child 2' }]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    name: 'Test',
-    toggled: false
-  }
-];
 
 const treeStyle = {
   tree: {
@@ -56,7 +26,7 @@ const treeStyle = {
         display: 'block'
       },
       activeLink: {
-        background: '#006400',
+        background: 'rgba(0, 100, 0, 0.1)',
         color: 'white'
       },
       toggle: {
@@ -75,10 +45,10 @@ const treeStyle = {
           margin: '-7px 0 0 -7px',
           height: '14px'
         },
-        height: 14,
-        width: 14,
+        height: 10,
+        width: 10,
         arrow: {
-          fill: '#9DA5AB',
+          fill: '#939393',
           strokeWidth: 0
         }
       },
@@ -86,7 +56,7 @@ const treeStyle = {
         base: {
           display: 'inline-block',
           verticalAlign: 'top',
-          color: '#9DA5AB'
+          color: 'darkgreen'
         },
         connector: {
           width: '2px',
@@ -131,10 +101,9 @@ class ChallengeTree extends Component {
           .sort((a, b) => a.order - b.order)
           .map(topic => ({
             name: topic.name,
-            children: topic.challenges
-              .map(challenge => ({
-                name: challenge.title
-              }))
+            children: topic.challenges.map(challenge => ({
+              name: challenge.title
+            }))
           }))
       };
     });
