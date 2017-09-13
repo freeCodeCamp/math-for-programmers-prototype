@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Treebeard } from 'react-treebeard';
 
-
 const treeStyle = {
   tree: {
     base: {
@@ -13,7 +12,8 @@ const treeStyle = {
       textAlign: 'Left',
       color: 'blue',
       fontFamily: 'Lato, sans-serif',
-      fontSize: '14px'
+      fontSize: '14px',
+      width: '350px'
     },
     node: {
       base: {
@@ -83,12 +83,28 @@ const treeStyle = {
   }
 };
 
+const animations = {
+  toggle: ({ node: { toggled } }) => ({
+    animation: { rotateZ: toggled ? 90 : 0 },
+    duration: 150
+  }),
+  drawer: () => ({
+    enter: {
+      animation: 'slideDown',
+      duration: 150
+    },
+    leave: {
+      animation: 'slideUp',
+      duration: 150
+    }
+  })
+};
+
 class ChallengeTree extends Component {
   constructor(props) {
     super(props);
 
-    const { data } = props;
-    const dataArr = Object.keys(data).map(subject => {
+    const data = Object.keys(props.data).map((subject, i) => {
       const name = subject
         .replace(/^\d+-/, '')
         .split('-')
@@ -97,11 +113,11 @@ class ChallengeTree extends Component {
 
       return {
         name,
-        children: data[subject]
-          .sort((a, b) => a.order - b.order)
-          .map(topic => ({
+        children: props.data[subject]
+          .map((topic, j) => ({
             name: topic.name,
-            children: topic.challenges.map(challenge => ({
+            children: topic.challenges.map((challenge, k) => ({
+              id: `${subject},t${j},c${k}`,
               name: challenge.title
             }))
           }))
@@ -109,14 +125,23 @@ class ChallengeTree extends Component {
     });
 
     this.state = {
-      data: dataArr
+      data
     };
 
     this.onToggle = this.onToggle.bind(this);
   }
 
   onToggle(node, toggled) {
+    // if node is a challenge
+    if (node.id) {
+      const vals = node.id.split(',');
+      const subject = vals[0];
+      const topicIndex = vals[1].slice(1);
+      const challengeIndex = vals[2].slice(1);
+      this.props.setChallenge(subject, topicIndex, challengeIndex);
+    }
     if (this.state.cursor) {
+      // eslint-disable-next-line
       this.state.cursor.active = false;
     }
     node.active = true;
@@ -129,7 +154,7 @@ class ChallengeTree extends Component {
   render() {
     return (
       <Treebeard
-        animations={false}
+        animations={animations}
         data={this.state.data || null}
         onToggle={this.onToggle}
         style={treeStyle}
@@ -139,7 +164,8 @@ class ChallengeTree extends Component {
 }
 
 ChallengeTree.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
+  setChallenge: PropTypes.func
 };
 
 export default ChallengeTree;

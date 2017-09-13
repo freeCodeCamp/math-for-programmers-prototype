@@ -12,11 +12,9 @@ export const runTests = () => ({
   type: RUN_TESTS
 });
 
-export const setChallenge = index => ({
+export const setChallenge = (subject, topicIndex, challengeIndex) => ({
   type: SET_CHALLENGE,
-  index
-});
-
-export const resetCurrentChallengeTests = () => ({
-  type: RESET_CURRENT_CHALLENGE_TESTS
+  subject,
+  topicIndex,
+  challengeIndex
 });

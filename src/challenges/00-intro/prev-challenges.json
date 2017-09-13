@@ -1,6 +1,6 @@
 {
-  "name": "Arithmetic",
-  "order": 1,
+  "name": "Previous Challenges",
+  "order": 0,
   "challenges": [
     {
       "title": "Example Challenge",
@@ -9,7 +9,7 @@
         "We can create new paragraphs by adding new strings to this array.",
         "We can add inline code by using the <b>code</b> tag: <code>\\frac12</code>.",
         "We can add a block of code by using the <b>blockquote</b> tag:",
-        "<blockquote>\\frac{ x^2 + 6x - 2 }{ x }\n\\f(x) = x^2 + 3x - 4</blockquote>",
+        "<blockquote>\\frac{ x^2 + 6x - 2 }{ x }\nf(x) = x^2 + 3x - 4</blockquote>",
         "We can use any sort of <b>html tags</b> like this: <ul><li><b>This text is bold</b></li><li><em>This text is in italics</em></li><ul>",
         "We can add an inline LaTeX expressions by using the <b>math</b> tag: <math>x^2 + 2</math> and <math>3 \\lt 5</math>.",
         "We can add a block LaTeX expression by using the <b>math</b> tag as the only element:",

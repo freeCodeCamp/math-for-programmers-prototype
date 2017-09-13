@@ -65,22 +65,20 @@ blockquote {
   display: flex;
   flex-direction: row;
 
-  width: 90%;
-  margin-left: 5%;
+  width: 94%;
+  margin-left: 3%;
 
   justify-content: space-between;
 }
 
 .content-left {
-  width: 33%;
-  padding-top:  40px;
   margin-left: 0;
+  padding-top: 40px;
 }
 
 .ChallengeInfo {
   width: 400px;
-  margin-top: 40px;
-  margin-right: 60px;
+  margin: 40px 40px 0 15px;
 
   text-align: left;
   a:link,
@@ -179,17 +177,18 @@ blockquote {
 
   align-items: left;
   justify-content: left;
-  > h3 {
+   > h3 {
     margin-bottom: 5px;
     margin-left: 10px;
   }
-  > span {
+   > span {
     margin-left: 40px;
   }
 }
 
 .MathJax_CHTML {
   font-size: 1.3em !important;
+
   margin: auto 3px !important;
 }
 
@@ -199,12 +198,14 @@ blockquote {
   text-align: left;
 
   h2 {
-    color: $dark-green;
     font-weight: bold;
+
+    color: $dark-green;
 
     i {
       font-size: 1.2em;
-      margin: auto 10px 0px 5px;
+
+      margin: auto 10px 0 5px;
     }
   }
 

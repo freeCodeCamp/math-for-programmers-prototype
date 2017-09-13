@@ -34,19 +34,17 @@ blockquote {
 .content {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  margin-left: 5%;
+  width: 94%;
+  margin-left: 3%;
   justify-content: space-between; }
 
 .content-left {
-  width: 33%;
-  padding-top: 40px;
-  margin-left: 0; }
+  margin-left: 0;
+  padding-top: 40px; }
 
 .ChallengeInfo {
   width: 400px;
-  margin-top: 40px;
-  margin-right: 60px;
+  margin: 40px 40px 0 15px;
   text-align: left; }
   .ChallengeInfo a:link,
   .ChallengeInfo a:visited {
@@ -129,11 +127,11 @@ blockquote {
   width: 450px;
   text-align: left; }
   .Tests h2 {
-    color: #006400;
-    font-weight: bold; }
+    font-weight: bold;
+    color: #006400; }
     .Tests h2 i {
       font-size: 1.2em;
-      margin: auto 10px 0px 5px; }
+      margin: auto 10px 0 5px; }
   .Tests .test {
     padding: 7px 6px; }
     .Tests .test i {

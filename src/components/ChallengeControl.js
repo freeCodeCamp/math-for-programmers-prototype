@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { runTests, setChallenge, resetCurrentChallengeTests } from '../actions';
+import { runTests, setChallenge } from '../actions';
 
 const ChallengeControl = ({
   activeChallenge,
@@ -25,7 +25,7 @@ const ChallengeControl = ({
 
   return (
     <div className='ChallengeControl'>
-      <select
+      {/* <select
         onChange={e => setChallenge(e.target.value)}
         value={activeChallenge}
         >
@@ -34,10 +34,10 @@ const ChallengeControl = ({
             {`${padNumber(i + 1)}: ${title}`}
           </option>
         ))}
-      </select>
+      </select> */}
       <button onClick={runTests}>Run Tests (Ctrl/Cmd + Enter)</button>
-      <button onClick={prevChallenge}>Prev Challenge</button>
-      <button onClick={nextChallenge}>Next Challenge</button>
+      {/* <button onClick={prevChallenge}>Prev Challenge</button>
+      <button onClick={nextChallenge}>Next Challenge</button> */}
       <button
         onClick={() =>
           window.open(
@@ -68,7 +68,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   runTests: () => dispatch(runTests()),
   setChallenge: index => {
-    dispatch(resetCurrentChallengeTests());
     dispatch(setChallenge(index));
   }
 });
