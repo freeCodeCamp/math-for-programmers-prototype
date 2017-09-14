@@ -113,14 +113,16 @@ class ChallengeTree extends Component {
 
       return {
         name,
-        children: props.data[subject]
-          .map((topic, j) => ({
-            name: topic.name,
-            children: topic.challenges.map((challenge, k) => ({
-              id: `${subject},t${j},c${k}`,
-              name: challenge.title
-            }))
-          }))
+        children: props.data[subject].map((topic, j) => ({
+          name: topic.name,
+          children: topic.challenges.map((challenge, k) => ({
+            id: `${subject},t${j},c${k}`,
+            name: challenge.title
+          })),
+          toggled:
+            j === Number.parseInt(sessionStorage.getItem('topicIndex'), 10)
+        })),
+        toggled: subject === sessionStorage.getItem('subject')
       };
     });
 
@@ -132,7 +134,7 @@ class ChallengeTree extends Component {
   }
 
   onToggle(node, toggled) {
-    // if node is a challenge
+    // Set Challenge on selection
     if (node.id) {
       const vals = node.id.split(',');
       const subject = vals[0];
@@ -140,6 +142,7 @@ class ChallengeTree extends Component {
       const challengeIndex = vals[2].slice(1);
       this.props.setChallenge(subject, topicIndex, challengeIndex);
     }
+
     if (this.state.cursor) {
       // eslint-disable-next-line
       this.state.cursor.active = false;

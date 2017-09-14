@@ -13,7 +13,6 @@ $grey: #e0e0e0;
 $dark-grey: #939393;
 $black: #2a2a2a;
 $white: #fff;
-
 body {
   font-family: 'Lato', sans-serif;
 
@@ -105,37 +104,20 @@ blockquote {
 
 .ChallengeControl {
   display: flex;
+  flex-direction: column;
 
   width: 84%;
-  margin-top: 30px;
+  margin-top: 50px;
+  margin-bottom: 15px;
 
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 
-  select {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.1em;
-
-    width: 100%;
-    height: 35px;
-    margin-bottom: 10px;
-
-    color: $dark-green;
-    border-color: $dark-green;
-    outline: none;
-  }
-
-  button:nth-child(3),
-  button:nth-child(4) {
-    width: 49%;
-  }
-  button:nth-child(5),
-  button:nth-child(2) {
-    flex-basis: 100%;
-  }
   button {
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
 
+    width: 60%;
     margin: 2px 0.5%;
     padding: 6px 12px;
 
@@ -196,19 +178,16 @@ blockquote {
   width: 450px;
 
   text-align: left;
-
   h2 {
     font-weight: bold;
 
     color: $dark-green;
-
     i {
       font-size: 1.2em;
 
       margin: auto 10px 0 5px;
     }
   }
-
   .test {
     padding: 7px 6px;
     i {

@@ -1,15 +1,13 @@
 import {
   UPDATE_CODE,
   RUN_TESTS,
-  SET_CHALLENGE,
-  RESET_CURRENT_CHALLENGE_TESTS
+  SET_CHALLENGE
 } from '../actions';
 import { assert } from 'chai';
 import initState from './initState';
 import initTests from '../helpers/initTests';
 
 const reducer = (state = initState, action) => {
-  const newState = { ...state };
   switch (action.type) {
     case UPDATE_CODE:
       return {
@@ -43,6 +41,10 @@ const reducer = (state = initState, action) => {
       };
     case SET_CHALLENGE:
       const { subject, topicIndex, challengeIndex } = action;
+      sessionStorage.setItem('subject', subject);
+      sessionStorage.setItem('topicIndex', topicIndex);
+      sessionStorage.setItem('challengeIndex', challengeIndex);
+
       const challenge =
         state.data[subject][topicIndex].challenges[challengeIndex];
       return {
@@ -51,14 +53,6 @@ const reducer = (state = initState, action) => {
         code: '$$\n' + challenge.challengeSeed.join('\n') + '\n$$',
         tests: challenge.tests.map(initTests)
       };
-    case RESET_CURRENT_CHALLENGE_TESTS:
-      newState.challenges[state.activeChallenge].tests = state.challenges[
-        state.activeChallenge
-      ].tests.map(t => {
-        t.status = 'init';
-        return t;
-      });
-      return newState;
     default:
       return state;
   }

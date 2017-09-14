@@ -8,14 +8,15 @@ for (let key in data) {
   }
 }
 
-const subjectIndex = sessionStorage.getItem('subjectIndex') || 0;
-const topicIndex = sessionStorage.getItem('topicIndex') || 0;
-const challengeIndex = sessionStorage.getItem('challengeIndex') || 0;
+const subject = sessionStorage.getItem('subject');
+const topicIndex =
+  sessionStorage.getItem('topicIndex') || 0;
+const challengeIndex =
+  sessionStorage.getItem('challengeIndex') || 0;
 
-const subjects = data[Object.keys(data)[subjectIndex]];
+const subjects = data[subject || Object.keys(data)[0]];
 const topic = subjects[topicIndex];
 const challenge = topic.challenges[challengeIndex];
-
 
 const initState = {
   code: '$$\n' + challenge.challengeSeed.join('\n') + '\n$$',

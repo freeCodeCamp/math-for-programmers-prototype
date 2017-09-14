@@ -26,6 +26,7 @@ class App extends Component {
       code,
       data,
       description,
+      runTests,
       setChallenge,
       tests,
       title,
@@ -44,7 +45,7 @@ class App extends Component {
           <div className='content-right'>
             <Editor code={code} updateCode={updateCode} />
             <Preview code={code} />
-            {/* <ChallengeControl /> */}
+            <ChallengeControl runTests={runTests} />
             <Tests tests={tests} />
           </div>
         </div>
@@ -76,7 +77,7 @@ const mapDispatchToProps = dispatch => ({
   runTests: () => dispatch(runTests()),
   setChallenge: (subject, topicIndex, challengeIndex) =>
     dispatch(setChallenge(subject, topicIndex, challengeIndex)),
-  updateCode: code => dispatch(updateCode(code))
+  updateCode: code => dispatch(updateCode(code)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
