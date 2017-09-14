@@ -75,6 +75,10 @@ blockquote {
   padding-top: 40px;
 }
 
+.content-right {
+
+}
+
 .ChallengeInfo {
   width: 400px;
   margin: 40px 40px 0 15px;
@@ -104,20 +108,20 @@ blockquote {
 
 .ChallengeControl {
   display: flex;
-  flex-direction: column;
 
-  width: 84%;
+  margin-left: 7%;
+  width: 90%;
   margin-top: 50px;
   margin-bottom: 15px;
 
-  align-items: center;
-  justify-content: center;
-
+  button:nth-child(2) {
+    width: 39%;
+  }
   button {
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
 
-    width: 60%;
+    // width: 60%;
     margin: 2px 0.5%;
     padding: 6px 12px;
 

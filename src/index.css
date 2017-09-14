@@ -62,16 +62,15 @@ blockquote {
 
 .ChallengeControl {
   display: flex;
-  flex-direction: column;
-  width: 84%;
+  margin-left: 7%;
+  width: 90%;
   margin-top: 50px;
-  margin-bottom: 15px;
-  align-items: center;
-  justify-content: center; }
+  margin-bottom: 15px; }
+  .ChallengeControl button:nth-child(2) {
+    width: 39%; }
   .ChallengeControl button {
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
-    width: 60%;
     margin: 2px 0.5%;
     padding: 6px 12px;
     cursor: pointer;
