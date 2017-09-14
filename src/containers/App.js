@@ -77,7 +77,7 @@ const mapDispatchToProps = dispatch => ({
   runTests: () => dispatch(runTests()),
   setChallenge: (subject, topicIndex, challengeIndex) =>
     dispatch(setChallenge(subject, topicIndex, challengeIndex)),
-  updateCode: code => dispatch(updateCode(code)),
+  updateCode: code => dispatch(updateCode(code))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
