@@ -6,52 +6,75 @@
       "id": "59a5801209a6acac59836300",
       "title": "Recognize Place Values to 10,000,000",
       "description": [
-        ""
+        "The number <math>8,742,356</math> can be represented on a place value chart like this:",
+        "<table> <tr> <th>Millions</th> <th>Hundred thousands</th> <th>Ten thousands</th> <th>Thousands</th> <th>Hundreds</th> <th>Tens</th> <th>Ones</th></tr> <tr><td>8</td><td>7</td><td>4</td><td>2</td><td>3</td><td>5</td><td>6</td> </tr></table>",
+        "The number <code>2,197</code> is made up of <code>2</code> thousands, <code>1</code> hundreds, <code>9</code> tens, and <code>7</code> ones.",
+        "What number is in the hundred thousands place in the number <code>6,532,931</code>?"
       ],
       "challengeSeed": [
+        "% Enter answer below this line.",
         ""
       ],
       "tests": [
-        ""
+        "assert(/(5)/g.test(expression), 'message: <code>5</code> should be in the hundred thousands place of <code>6,532,931</code>.')" 
       ]
     },
     {
       "id": "59a5801209a6acac59836301",
       "title": "Greatest and Least Values of Given Digits to 10,000,000",
       "description": [
-        ""
+        "Given the digits <code>5</code> <code>2</code> <code>9</code> <code>7</code> <code>8</code> and <code>1</code>, you can make many numbers. For example, <code>297851</code>, or <code>925781</code>.",
+        "If you use each given digit exactly once, the largest number you can make is <code>987521</code>. The smallest number you can make is <code>125789</code>.",
+        "Do you see a pattern? The smaller number is the larger number backwards.",
+        "Here are some digits: <code>7</code> <code>5</code> <code>2</code> <code>6</code> <code>1</code> <code>9</code> <code>8</code>.",
+        "Write the largest and smallest number that can be created with the digits above."
       ],
       "challengeSeed": [
-        ""
+        "% Enter the largest and smallest value that can be made with the given digits (separated by ,)",
+        " , "
       ],
       "tests": [
-        ""
+        "assert(/(9876521)\\s*\\,\\s*(1256789)/g.test(expression), 'message: The largest and smallest numbers possibly made by the given digits should be written.')",
+        "assert(/(\\d{7})\\s*\\,\\s*(\\d{7})/g.test(expression), 'message: The two numbers should be separated by <code>,</code>')"
       ]
     },
     {
       "id": "59a5801209a6acac59836303",
       "title": "Higher Order Place Value and Number Placement Problems",
       "description": [
-        ""
+        "Try to figure out a 6-digit number that fits all the conditions below: <ul>",
+        "<li>The <b>2nd</b> digit is <em>3 times</em> the <em>1st</em> digit. </li>",
+        "<li>The <b>3rd</b> digit is <em>1 plus</em> the <em>2nd</em> digit. </li>",
+        "<li>The <b>4th</b> digit is <em>1 less</em> than the <em>1st</em> digit. </li>",
+        "<li>The <b>6th</b> digit is the same as the <em>3rd</em> digit.</li>",
+        "<li>The sum of all six digits is <code>30</code>.</li></ul>"
       ],
       "challengeSeed": [
+        "% Enter the answer below this line.",
         ""
       ],
       "tests": [
-        ""
+        "assert(/(934824)/g.test(expression), 'message: Number should match the conditions in the challenge.')",
+        "assert(/(\\d{6})/g.test(expression), 'message: Number should contain <em>six</em> digits.')"
       ]
     },
     {
       "id": "59a5801209a6acac59836304",
       "title": "Round Large Numbers",
       "description": [
-        ""
+        "To round numbers, the first thing you must determine is the <em>rounding digit.</em> The rounding digit is the number in the spot of the nearest place you are trying to round to. For example, when rounding the number <math>2,124,828</math> to the nearest hundred-thousand, the digit <code>1</code> becomes the rounding digit.",
+        "After you've determined the rounding digit, you look to the right of it.",
+        "<ul><li>If the number to the right of the rounding digit is between <code>0</code> and <code>4</code>, the rounding digit does not change. Then, all number to the right of it will become <code>0</code>.</li></ul>",
+        "<ul><li>If the number is between <code>5</code> and <code>9</code>, the rounding digit rounds up by one. Then, all numbers to the right of it will become <code>0</code>.</li></ul>",
+        "So our <math>2,124,828</math> becomes <math>2,100,000</math> when rounded to the nearest hundred-thousand.",
+        "Round <code>5,347,731</code> to the nearest ten thousand."
       ],
       "challengeSeed": [
+        "% Round the number in the challenge description.",
         ""
       ],
       "tests": [
-        ""
+        "assert(/(5,350,000)/g.test(expression), 'message: Number should match the conditions in the challenge.')"
       ]
     }
   ]
