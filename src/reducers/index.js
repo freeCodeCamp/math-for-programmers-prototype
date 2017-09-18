@@ -1,28 +1,13 @@
 import {
   UPDATE_CODE,
   RUN_TESTS,
-  SET_CHALLENGE,
-  RESET_CURRENT_CHALLENGE_TESTS
+  SET_CHALLENGE
 } from '../actions';
-import data from '../data.json';
 import { assert } from 'chai';
-
-// Add status to each test
-data.challenges.forEach(c => {
-  c.tests = c.tests.map(t => ({
-    test: t,
-    status: 'init'
-  }));
-});
-
-const initState = {
-  code: '$$\n' + data.challenges[0].challengeSeed.join('\n') + '\n$$',
-  challenges: data.challenges,
-  activeChallenge: 0
-};
+import initState from './initState';
+import initTests from '../helpers/initTests';
 
 const reducer = (state = initState, action) => {
-  const newState = { ...state };
   switch (action.type) {
     case UPDATE_CODE:
       return {
@@ -30,47 +15,44 @@ const reducer = (state = initState, action) => {
         code: action.code
       };
     case RUN_TESTS:
-      newState.challenges[state.activeChallenge].tests = state.challenges[
-        state.activeChallenge
-      ].tests.map(t => {
-        const strCode = t.test
-          .replace(/^assert\(/g, '')
-          .replace(/, 'message.*/, '');
-
-        try {
-          // Remove LaTeX Math delimiters before the test running
-          const codeNoDelims = state.code
-            .replace(/^.*\n/g, '')
-            .replace(/\$\$.*$/g, '');
-          // eslint-disable-next-line no-eval
-          const res = eval(
-            strCode.replace('expression', JSON.stringify(codeNoDelims))
-          );
-          assert(res);
-          t.status = 'passed';
-        } catch (e) {
-          t.status = 'failed';
-        }
-        return t;
-      });
-      return newState;
-    case SET_CHALLENGE:
       return {
         ...state,
-        code:
-          '$$\n' +
-          state.challenges[action.index].challengeSeed.join('\n') +
-          '\n$$',
-        activeChallenge: Number.parseInt(action.index, 10)
+        tests: state.tests.map(t => {
+          const strCode = t.test
+            .replace(/^assert\(/g, '')
+            .replace(/, 'message.*/, '');
+
+          try {
+            // Remove LaTeX Math delimiters before the test running
+            const codeNoDelims = state.code
+              .replace(/^.*\n/g, '')
+              .replace(/\$\$.*$/g, '');
+            // eslint-disable-next-line no-eval
+            const res = eval(
+              strCode.replace('expression', JSON.stringify(codeNoDelims))
+            );
+            assert(res);
+            t.status = 'passed';
+          } catch (e) {
+            t.status = 'failed';
+          }
+          return t;
+        })
       };
-    case RESET_CURRENT_CHALLENGE_TESTS:
-      newState.challenges[state.activeChallenge].tests = state.challenges[
-        state.activeChallenge
-      ].tests.map(t => {
-        t.status = 'init';
-        return t;
-      });
-      return newState;
+    case SET_CHALLENGE:
+      const { subject, topicIndex, challengeIndex } = action;
+      sessionStorage.setItem('subject', subject);
+      sessionStorage.setItem('topicIndex', topicIndex);
+      sessionStorage.setItem('challengeIndex', challengeIndex);
+
+      const challenge =
+        state.data[subject][topicIndex].challenges[challengeIndex];
+      return {
+        ...state,
+        challenge,
+        code: '$$\n' + challenge.challengeSeed.join('\n') + '\n$$',
+        tests: challenge.tests.map(initTests)
+      };
     default:
       return state;
   }

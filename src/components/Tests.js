@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 const testStatus2Icon = status => {
   switch (status) {
@@ -27,7 +26,6 @@ const testStatus2Color = status => {
 
 const Tests = ({ tests }) => {
   const testsMsgs = tests.map((x, i) => {
-    const msg = x.test.split(/, 'message: /)[1].replace(/'.*$/, '');
     return (
       <div className='test' key={i}>
         <i
@@ -37,19 +35,19 @@ const Tests = ({ tests }) => {
             color: testStatus2Color(x.status)
           }}
         />
-        <p dangerouslySetInnerHTML={{ __html: msg }} key={i} />
+        <p dangerouslySetInnerHTML={{ __html: x.message }} key={i} />
       </div>
     );
   });
 
   return (
     <div className='Tests'>
-      {tests.every(t => t.status === 'passed')
-        ? <h2>
-            <i aria-hidden='true' className={'fa fa-check'} />
-            All Tests Passed
-          </h2>
-        : null}
+      {tests.every(t => t.status === 'passed') ? (
+        <h2>
+          <i aria-hidden='true' className={'fa fa-check'} />
+          All Tests Passed
+        </h2>
+      ) : null}
       {testsMsgs}
     </div>
   );
@@ -59,10 +57,4 @@ Tests.propTypes = {
   tests: PropTypes.array
 };
 
-const mapStateToProps = state => {
-  return {
-    tests: state.challenges[state.activeChallenge].tests
-  };
-};
-
-export default connect(mapStateToProps)(Tests);
+export default Tests;

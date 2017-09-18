@@ -13,7 +13,6 @@ $grey: #e0e0e0;
 $dark-grey: #939393;
 $black: #2a2a2a;
 $white: #fff;
-
 body {
   font-family: 'Lato', sans-serif;
 
@@ -52,7 +51,8 @@ blockquote {
 }
 
 .App {
-  width: 100%;
+  width: 100vw;
+  padding: 0;
 
   text-align: center;
   h1 {
@@ -64,15 +64,24 @@ blockquote {
   display: flex;
   flex-direction: row;
 
-  width: 950px;
+  width: 94%;
+  margin-left: 3%;
 
   justify-content: space-between;
 }
 
+.content-left {
+  margin-left: 0;
+  padding-top: 40px;
+}
+
+.content-right {
+
+}
+
 .ChallengeInfo {
-  // font-size: 1.1em;
   width: 400px;
-  margin-top: 60px;
+  margin: 40px 40px 0 15px;
 
   text-align: left;
   a:link,
@@ -100,36 +109,19 @@ blockquote {
 .ChallengeControl {
   display: flex;
 
-  width: 84%;
-  margin-top: 30px;
+  margin-left: 7%;
+  width: 90%;
+  margin-top: 50px;
+  margin-bottom: 15px;
 
-  flex-wrap: wrap;
-
-  select {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.1em;
-
-    width: 100%;
-    height: 35px;
-    margin-bottom: 10px;
-
-    color: $dark-green;
-    border-color: $dark-green;
-    outline: none;
-  }
-
-  button:nth-child(3),
-  button:nth-child(4) {
-    width: 49%;
-  }
-  button:nth-child(5),
   button:nth-child(2) {
-    flex-basis: 100%;
+    width: 39%;
   }
   button {
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
 
+    // width: 60%;
     margin: 2px 0.5%;
     padding: 6px 12px;
 
@@ -171,17 +163,18 @@ blockquote {
 
   align-items: left;
   justify-content: left;
-  > h3 {
+   > h3 {
     margin-bottom: 5px;
     margin-left: 10px;
   }
-  > span {
+   > span {
     margin-left: 40px;
   }
 }
 
 .MathJax_CHTML {
   font-size: 1.3em !important;
+
   margin: auto 3px !important;
 }
 
@@ -189,17 +182,16 @@ blockquote {
   width: 450px;
 
   text-align: left;
-
   h2 {
-    color: $dark-green;
     font-weight: bold;
 
+    color: $dark-green;
     i {
       font-size: 1.2em;
-      margin: auto 10px 0px 5px;
+
+      margin: auto 10px 0 5px;
     }
   }
-
   .test {
     padding: 7px 6px;
     i {

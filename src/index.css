@@ -25,7 +25,8 @@ blockquote {
   background-color: #fffbe5; }
 
 .App {
-  width: 100%;
+  width: 100vw;
+  padding: 0;
   text-align: center; }
   .App h1 {
     margin-bottom: 30px; }
@@ -33,12 +34,17 @@ blockquote {
 .content {
   display: flex;
   flex-direction: row;
-  width: 950px;
+  width: 94%;
+  margin-left: 3%;
   justify-content: space-between; }
+
+.content-left {
+  margin-left: 0;
+  padding-top: 40px; }
 
 .ChallengeInfo {
   width: 400px;
-  margin-top: 60px;
+  margin: 40px 40px 0 15px;
   text-align: left; }
   .ChallengeInfo a:link,
   .ChallengeInfo a:visited {
@@ -56,24 +62,12 @@ blockquote {
 
 .ChallengeControl {
   display: flex;
-  width: 84%;
-  margin-top: 30px;
-  flex-wrap: wrap; }
-  .ChallengeControl select {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.1em;
-    width: 100%;
-    height: 35px;
-    margin-bottom: 10px;
-    color: #006400;
-    border-color: #006400;
-    outline: none; }
-  .ChallengeControl button:nth-child(3),
-  .ChallengeControl button:nth-child(4) {
-    width: 49%; }
-  .ChallengeControl button:nth-child(5),
+  margin-left: 7%;
+  width: 90%;
+  margin-top: 50px;
+  margin-bottom: 15px; }
   .ChallengeControl button:nth-child(2) {
-    flex-basis: 100%; }
+    width: 39%; }
   .ChallengeControl button {
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
@@ -121,11 +115,11 @@ blockquote {
   width: 450px;
   text-align: left; }
   .Tests h2 {
-    color: #006400;
-    font-weight: bold; }
+    font-weight: bold;
+    color: #006400; }
     .Tests h2 i {
       font-size: 1.2em;
-      margin: auto 10px 0px 5px; }
+      margin: auto 10px 0 5px; }
   .Tests .test {
     padding: 7px 6px; }
     .Tests .test i {

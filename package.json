@@ -12,18 +12,21 @@
     "react-mathjax-updated": "^0.1.3",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.11",
+    "react-treebeard": "^2.0.3",
     "redux": "^3.7.2"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "eslint-plugin-prefer-object-spread": "^1.2.1"
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
+    "prettier": "^1.6.1"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"yarn run scss-watch\"",
+    "start": "npm run merge-challenges && concurrently \"react-scripts start\" \"npm run scss-watch\"",
     "build": "react-scripts build && rm -rf docs && mv build docs",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "scss-watch": "cd src/ && scss --watch index.scss:index.css"
+    "scss-watch": "cd src/ && scss --watch index.scss:index.css",
+    "merge-challenges": "node mergeChallenges.js"
   },
   "author": "David Acosta",
   "license": "BSD 3-Clause",
