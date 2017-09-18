@@ -6,7 +6,7 @@ import { updateCode, runTests, setChallenge } from '../actions';
 // Components
 import ChallengeTree from '../components/ChallengeTree';
 import ChallengeInfo from '../components/ChallengeInfo';
-import Editor from './Editor';
+import Editor from '../components/Editor';
 import Preview from '../components/Preview';
 import ChallengeControl from '../components/ChallengeControl';
 import Tests from '../components/Tests';
