@@ -6,39 +6,70 @@
       "id": "59a5801209a6acac5983b417",
       "title": "Exponents",
       "description": [
-        ""
+        "<code>Factors</code> are numbers than are multiplied together, such as <math>5 \\times 6\\times 7</math> where <code>5, 6</code> and <code>7</code> are <code>factors</code>.",
+        "A factor repeated multiple times can be rewritten as a <code>power</code> with an <code>exponent</code>. The <code>exponent</code> is the small number that indicates how many times the <code>base</code> gets multiplied by itself.",
+        "<math>2 \\times 2 \\times 2 \\times 2 = ~?</math>",
+        "In the above expression, the number <code>2</code> is the number being multiplied, so the <code>base</code> is 2. Since <code>2</code> is multiplied by itself 4 times, the <code>exponent</code> or <code>power</code> is <code>4</code>."
       ],
       "challengeSeed": [
-        ""
+        "% Solve the exponent problems.",
+        "% Replace the ? with an exponent like x^y.",
+        "3 \\times 3 \\times 3 \\times 3 \\times 3 = ? \\\\",
+        "7 \\times 7 \\times 7 = ? \\\\",
+        "9 \\times 9 \\times 9 \\times 9 \\times 9 \\times 9 = ? \\\\",
+        "5 \\times 5 \\times 5 \\times 5 = ?"
       ],
       "tests": [
-        ""
+        "assert(/=\\s3\\^5/g.test(expression), 'message: 3 × 3 × 3 × 3 × 3 = ?')",
+        "assert(/=\\s7\\^3/g.test(expression), 'message: 7 × 7 × 7 = ?')",
+        "assert(/=\\s9\\^6/g.test(expression), 'message: 9 × 9 × 9 × 9 × 9 × 9 = ?')",
+        "assert(/=\\s5\\^4/g.test(expression), 'message: 5 × 5 × 5 × 5 = ?')"
       ]
     },
     {
       "id": "59a5801209a6acac59836338",
       "title": "Evaluate and Compare Powers",
       "description": [
-        ""
+        "Here's an expression:",
+        "<math>8^3</math>",
+        "The bigger number, 8, is the <code>base</code>. This is the number that gets multiplied by itself when the expression is evaluated. The smaller number, 3, is the <code>exponent</code>. This is the number that indicates how many times the <code>base</code> gets multiplied by itself. Also known as a <code>power</code>.",
+        "Let's evaluate the above expression: <math>8^3 = 8 \\times 8 \\times 8</math>",
+        "<math>8^3 = 8 \\times 8 \\times 8 = 512</math>"
       ],
       "challengeSeed": [
-        ""
+        "% Fill in the blanks with >, <, or =.",
+        "5^4 ? 4^5 \\\\",
+        "7^2 ? 2^4 \\\\",
+        "2^9 ? 12^2"
       ],
       "tests": [
-        ""
+        "assert(/5\\^4\\s\\<\\s4\\^5/g.test(expression), 'message: 5^4 ? 4^5')",
+        "assert(/7\\^2\\s\\<\\s2\\^4/g.test(expression), 'message: 7^2 ? 2^4')",
+        "assert(/2\\^9\\s\\>\\s12\\^2/g.test(expression), 'message: 2^9 ? 12^2')"
       ]
     },
     {
       "id": "59a5801209a6acac59836339",
       "title": "Perfect Square Roots",
       "description": [
-        ""
+        "Squares have four sides of the same length, meaning every side has the same length. Therefore, if you know the length of a side, you can calculate the area by <code>squaring</code> the length. This formula can be represented like this:",
+        "<math>A = s^2</math>",
+        "Conversely, if you know the area of a square, you can calculate the length of it's sides using the <code>square root</code>. Square roots are represented like this: <math>s = \\sqrt{A}</math>",
+        "<code>Perfect squares</code> are numbers with square roots that are whole numbers. Some examples of perfect squares are <code>4, 9, 16, 25, 36, 49</code>.",
+        "Example: <math>\\sqrt{36} = 6</math>"
       ],
       "challengeSeed": [
-        ""
+        "% Solve each square root.",
+        "\\sqrt{100} = ? \\\\",
+        "\\sqrt{81} = ? \\\\",
+        "\\sqrt{225} = ? \\\\",
+        "\\sqrt{49} = ?"
       ],
       "tests": [
-        ""
+        "assert(/\\{100\\}\\s=\\s10/g.test(expression), 'message: √100 = ?')",
+        "assert(/\\{81\\}\\s=\\s9/g.test(expression), 'message: √81 = ?')",
+        "assert(/\\{225\\}\\s=\\s15/g.test(expression), 'message: √225 = ?')",
+        "assert(/\\{49\\}\\s=\\s*7/g.test(expression), 'message: √49 = ?')"
       ]
     },
     {

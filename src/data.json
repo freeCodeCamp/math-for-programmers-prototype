@@ -200,23 +200,67 @@
         {
           "id": "59a5801209a6acac5983b411",
           "title": "Add Whole Numbers",
-          "description": [""],
-          "challengeSeed": [""],
-          "tests": [""]
+          "description": [
+            "Adding whole numbers is the process of combining two or more numbers. The following problem might look familiar:",
+            "<math>3 + 4 = ~ ?</math>",
+            "In this problem, you are adding three and four. That is three whole things plus four whole things. When combined, this makes a total of seven things. The result of an addition problem is called the <code>sum</code>.",
+            "The above problem is written <code>horizontally</code>. Another way to write addition problems is <code>vertically</code>, like this:",
+            "<math>\\begin{array}{}& 3 \\\\+ & 4 \\\\\\hline& 7 \\\\ \\end{array}</math>"
+          ],
+          "challengeSeed": [
+            "% Solve the addition problems.",
+            "124 + 94 = ? \\\\",
+            "24 + 18 = ? \\\\",
+            "7 + 14 = ?"
+          ],
+          "tests": [
+            "assert(/124\\s\\+\\s94\\s\\=\\s*218/g.test(expression), 'message: 124 + 94 = ?')",
+            "assert(/24\\s\\+\\s18\\s\\=\\s*42/g.test(expression), 'message: 24 + 18 = ?')",
+            "assert(/7\\s\\+\\s14\\s\\=\\s*21/g.test(expression), 'message: 7 + 14 = ?')"
+          ]
         },
         {
           "id": "59a5801209a6acac59836306",
           "title": "Subtract Whole Numbers",
-          "description": [""],
-          "challengeSeed": [""],
-          "tests": [""]
+          "description": [
+            "Subtracting whole numbers is the opposite of adding them. So, if you add two numbers together, then subtract one of the original addends, you will end up with the other addend. When you add numbers, you get the <code>sum</code>. When you subtract numbers, you get the <code>difference</code>. Here's an example:",
+            "<math>26 - 9 = ~ ?</math>",
+            "When subtracting, it can be helpful to rewrite the problem vertically. Be sure to line up the numbers by place value. <math>\\begin{array}{}& 26 \\\\- & ~9 \\\\\\hline& ? \\\\ \\end{array}</math>",
+            "The difference is <code>17</code>."
+          ],
+          "challengeSeed": [
+            "% Solve the subtraction problems.",
+            "821 - 291 = ? \\\\",
+            "1218 - 129 = ? \\\\",
+            "2154 - 1239 = ?"
+          ],
+          "tests": [
+            "assert(/821\\s\\-\\s291\\s\\=\\s*530/g.test(expression), 'message: 821 - 291 = ?')",
+            "assert(/1218\\s\\-\\s129\\s\\=\\s*1089/g.test(expression), 'message: 1218 - 129 = ?')",
+            "assert(/2154\\s\\-\\s1239\\s\\=\\s*915/g.test(expression), 'message: 2154 - 1239 = ?')"
+          ]
         },
         {
           "id": "59a5801209a6acac59836307",
           "title": "Estimate Whole Number Sums and Differences",
-          "description": [""],
-          "challengeSeed": [""],
-          "tests": [""]
+          "description": [
+            "<code>Estimation</code> means finding an answer that is reasonably close to the exact answer. <code>Estimation</code> is useful in situations where an exact answer is not needed. The first step in estimating a <code>sum</code> or <code>difference</code> is to <code>round</code> the numbers to the nearest power of ten.",
+            "Here is how rounding helps when estimating, consider the following problem:",
+            "<math>516 + 132 = ~?</math>",
+            "Since these numbers are relatively small, it would be simplest to round to the nearest ten. <code>516</code> rounds up to <code>520</code> and <code>132</code> rounds down to <code>130</code>. Now, it's simple to sum the rounded numbers: <math>520 + 130 = 650</math>",
+            "Remember, estimation has to make sense for the given situation. If a precise answer is required, you should not use estimation."
+          ],
+          "challengeSeed": [
+            "% Estimate the results of the following problems:",
+            "437 + 158 = ? \\\\",
+            "915 - 553 = ? \\\\",
+            "4801 + 124 + 217 = ?"
+          ],
+          "tests": [
+            "assert(/437\\s\\+\\s158\\s\\=\\s*600/g.test(expression), 'message: 437 + 158 = ?')",
+            "assert(/915\\s\\-\\s553\\s\\=\\s*370/g.test(expression), 'message: 915 - 553 = ?')",
+            "assert(/4801\\s\\+\\s124\\s\\+\\s217\\s\\=\\s*5140/g.test(expression), 'message: 4801 + 124 + 217 = ?')"
+          ]
         }
       ]
     },
@@ -520,23 +564,72 @@
         {
           "id": "59a5801209a6acac5983b417",
           "title": "Exponents",
-          "description": [""],
-          "challengeSeed": [""],
-          "tests": [""]
+          "description": [
+            "<code>Factors</code> are numbers than are multiplied together, such as <math>5 \\times 6\\times 7</math> where <code>5, 6</code> and <code>7</code> are <code>factors</code>.",
+            "A factor repeated multiple times can be rewritten as a <code>power</code> with an <code>exponent</code>. The <code>exponent</code> is the small number that indicates how many times the <code>base</code> gets multiplied by itself.",
+            "<math>2 \\times 2 \\times 2 \\times 2 = ~?</math>",
+            "In the above expression, the number <code>2</code> is the number being multiplied, so the <code>base</code> is 2. Since <code>2</code> is multiplied by itself 4 times, the <code>exponent</code> or <code>power</code> is <code>4</code>."
+          ],
+          "challengeSeed": [
+            "% Solve the exponent problems.",
+            "% Replace the ? with an exponent like x^y.",
+            "3 \\times 3 \\times 3 \\times 3 \\times 3 = ? \\\\",
+            "7 \\times 7 \\times 7 = ? \\\\",
+            "9 \\times 9 \\times 9 \\times 9 \\times 9 \\times 9 = ? \\\\",
+            "5 \\times 5 \\times 5 \\times 5 = ?"
+          ],
+          "tests": [
+            "assert(/=\\s3\\^5/g.test(expression), 'message: 3 × 3 × 3 × 3 × 3 = ?')",
+            "assert(/=\\s7\\^3/g.test(expression), 'message: 7 × 7 × 7 = ?')",
+            "assert(/=\\s9\\^6/g.test(expression), 'message: 9 × 9 × 9 × 9 × 9 × 9 = ?')",
+            "assert(/=\\s5\\^4/g.test(expression), 'message: 5 × 5 × 5 × 5 = ?')"
+          ]
         },
         {
           "id": "59a5801209a6acac59836338",
           "title": "Evaluate and Compare Powers",
-          "description": [""],
-          "challengeSeed": [""],
-          "tests": [""]
+          "description": [
+            "Here's an expression:",
+            "<math>8^3</math>",
+            "The bigger number, 8, is the <code>base</code>. This is the number that gets multiplied by itself when the expression is evaluated. The smaller number, 3, is the <code>exponent</code>. This is the number that indicates how many times the <code>base</code> gets multiplied by itself. Also known as a <code>power</code>.",
+            "Let's evaluate the above expression: <math>8^3 = 8 \\times 8 \\times 8</math>",
+            "<math>8^3 = 8 \\times 8 \\times 8 = 512</math>"
+          ],
+          "challengeSeed": [
+            "% Fill in the blanks with >, <, or =.",
+            "5^4 ? 4^5 \\\\",
+            "7^2 ? 2^4 \\\\",
+            "2^9 ? 12^2"
+          ],
+          "tests": [
+            "assert(/5\\^4\\s\\<\\s4\\^5/g.test(expression), 'message: 5^4 ? 4^5')",
+            "assert(/7\\^2\\s\\<\\s2\\^4/g.test(expression), 'message: 7^2 ? 2^4')",
+            "assert(/2\\^9\\s\\>\\s12\\^2/g.test(expression), 'message: 2^9 ? 12^2')"
+          ]
         },
         {
           "id": "59a5801209a6acac59836339",
           "title": "Perfect Square Roots",
-          "description": [""],
-          "challengeSeed": [""],
-          "tests": [""]
+          "description": [
+            "Squares have four sides of the same length, meaning every side has the same length. Therefore, if you know the length of a side, you can calculate the area by <code>squaring</code> the length. This formula can be represented like this:",
+            "<math>A = s^2</math>",
+            "Conversely, if you know the area of a square, you can calculate the length of it's sides using the <code>square root</code>. Square roots are represented like this: <math>s = \\sqrt{A}</math>",
+            "<code>Perfect squares</code> are numbers with square roots that are whole numbers. Some examples of perfect squares are <code>4, 9, 16, 25, 36, 49</code>.",
+            "Example: <math>\\sqrt{36} = 6</math>"
+          ],
+          "challengeSeed": [
+            "% Solve each square root.",
+            "\\sqrt{100} = ? \\\\",
+            "\\sqrt{81} = ? \\\\",
+            "\\sqrt{225} = ? \\\\",
+            "\\sqrt{49} = ?"
+          ],
+          "tests": [
+            "assert(/\\{100\\}\\s=\\s10/g.test(expression), 'message: √100 = ?')",
+            "assert(/\\{81\\}\\s=\\s9/g.test(expression), 'message: √81 = ?')",
+            "assert(/\\{225\\}\\s=\\s15/g.test(expression), 'message: √225 = ?')",
+            "assert(/\\{49\\}\\s=\\s*7/g.test(expression), 'message: √49 = ?')"
+          ]
         },
         {
           "id": "59a5801209a6acac59836340",
