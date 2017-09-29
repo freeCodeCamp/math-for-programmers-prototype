@@ -51,7 +51,7 @@
           "title": "Compare Fractions that have Common Denominators",
           "description": [
             "When comparing fractions with the same denominator, we can just compare the numerators.",
-            "For example, if we compare <math>\\frac35</math> and <math>\\frac45</math> we are comparing <b>3</b> lots of <math>\\frac15</math> and <b>4</b> lots of <math>\\frac15</math>.  Since 3 is less than 4, <math>\\frac37 \\lt \\frac47</math>."
+            "For example, if we compare <math>\\frac35</math> and <math>\\frac45</math> we are comparing <b>3</b> lots of <math>\\frac15</math> and <b>4</b> lots of <math>\\frac15</math>.  Since 3 is less than 4, <math>\\frac35 \\lt \\frac45</math>."
           ],
           "challengeSeed": [
             "% Replace the ? below with \\lt (less than), \\gt (greater than) or = (equal).",
